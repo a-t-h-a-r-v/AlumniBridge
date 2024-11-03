@@ -1,3 +1,28 @@
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+}
+.title{
+
+    font-weight:bold;
+    font-size:36;
+    align-items:flex-start;
+
+}
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+}
+.custom-img-size {
+    width: 75%; /* Set image width to 60% */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+}
+.carousel-item {
+    transition: transform 0.5s ease-in-out; /* Faster slide transition */
+}
 .about{
     font-weight:bold;
     font-size:30px;
@@ -24,10 +49,10 @@
     border-radius: 5%;
     color: rgb(33, 38, 38);
 
-  } 
-  
-  .nav-item a:hover{
+} 
+
+.nav-item a:hover{
     background: rgb(21, 233, 42);
     color: white;
     box-shadow: 0 0 1rem rgb(70, 213, 13);
-  }
+}
