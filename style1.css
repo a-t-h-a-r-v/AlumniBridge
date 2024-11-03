@@ -1,0 +1,33 @@
+.about{
+    font-weight:bold;
+    font-size:30px;
+    color:red;
+    text-align:center;
+    margin:10px;
+}
+.princi img{
+    height:60%;
+    float:left;
+    margin-right:10px;
+}
+.prinmsg{
+    margin-left:175;
+    color:red;
+    font-weight:bold;
+}
+
+.nav-item a{
+    display: inline-flex;
+    justify-content: center;
+    background: rgb(233, 236, 238);
+    border: 0.13rem solid rgb(58, 246, 41);
+    border-radius: 5%;
+    color: rgb(33, 38, 38);
+
+  } 
+  
+  .nav-item a:hover{
+    background: rgb(21, 233, 42);
+    color: white;
+    box-shadow: 0 0 1rem rgb(70, 213, 13);
+  }
