@@ -1,3 +1,1 @@
 # AlumniBridge
-
-## Collab accepted !
