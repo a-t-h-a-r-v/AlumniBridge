@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platform Page</title>
+  <link rel="stylesheet" href="home.css">
+
+ 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+          <style>
+            .element {
+              background-image: url('welcome.gif');
+              background-size: contain; /* Ensure the entire GIF is visible */
+              background-repeat: no-repeat; /* Prevent tiling of the GIF */
+              background-position: center;
+              width: 600px;
+              height: 400px;
+              position: absolute;
+              top: 50%; /* Position it vertically in the center */
+              right: 1.5%; /* Position it on the right side */
+              transform: translateY(-50%); /* Adjust for exact vertical centering */
+          }
+          
+          .elements {
+            background-image: url('CENTRE.gif');
+            background-size: cover;
+            background-position: center;
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 50%; /* Position it vertically in the center */
+            left: 95%; /* Position it on the right side */
+            transform: translateY(-50%); /* Adjust for exact vertical centering */
+        }
+
+        /* Hyper Text Effect for Heading */
+.stories-heading {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 2rem; /* Default size for heading */
+  color: black; /* Default text color */
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  animation: fadeInScale 2s ease-out forwards; /* Apply fade-in and scale animation */
+}
+
+@media (prefers-color-scheme: dark) {
+  .stories-heading {
+    color: white; /* Adapt to dark mode */
+  }
+}
+
+/* Animation for fade-in and scaling effect */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5); /* Start with smaller size */
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1); /* Scale up */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* End at normal size */
+  }
+}
+
+/* Hover effect for color change and scaling */
+.stories-heading:hover {
+  color: linear-gradient(45deg, #1511eb, #2575fc , #729fec); /* Change text color on hover (Tomato color) */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+          </style>
+    
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#home"><i class="fa fa-fw fa-home"></i> <span>Home</span></a>
+    <a href="#about-section"><i class="fa fa-fw fa-info-circle"></i> <span>About</span></a>
+    <a href="#stories-section"><i class="fa fa-fw fa-book"></i> <span>Stories</span></a>
+    <a href="#jobs"><i class="fa fa-fw fa-briefcase"></i> <span>Jobs</span></a>
+    <a href="#profile"><i class="fa fa-fw fa-user-tie"></i> <span>Profile</span></a>
+    <a href="#network"><i class="fa fa-fw fa-user-plus"></i> <span>Networks</span></a>
+    <a href="#research"><i class="fa fa-fw fa-book-open"></i> <span>Research</span></a>
+    <a href="#developers"><i class="fa fa-fw fa-users"></i> <span>Developers</span></a>
+  </div>
+
+  
+    <!-- Navigation Bar -->
+    <nav class="navbar" style="padding-left: 60%;">
+      <!--<ul>-->
+      <!--  <li><a href="#welcome-section">Home</a></li>-->
+      <!--  <li><a href="#about-section">About</a></li>-->
+      <!--  <li><a href="#stories-section">Stories</a></li>-->
+      <!--  <li><a href="#footer-section">Contact</a></li>-->
+      <!--</ul>-->
+      <input type="text" class="search-bar" placeholder="Search...">
+    </nav>
+  
+   <section id="welcome-section" class="animate-section">
+  <div class="welcome-content">
+    <h1 class="typing-animation">𝐆𝐲𝐚𝐧 𝐒𝐚𝐧𝐠𝐚𝐦 𝐌𝐚𝐧𝐜𝐡</h1>
+    <p>Connecting Students, Alumni, and Scholars for a brighter future.</p>
+    <div class="image-container">
+      <!-- Optional images -->
+    </div>
+  </div>
+  <div class="element"></div>
+</section>
+    
+      <section id="about-section" class="animate-section">
+        <div class="about-content">
+          <h2 class="about-heading">About Us</h2>
+          <p class="about-description">
+            Our platform bridges the gap between students and alumni, creating opportunities for collaboration, mentorship, and growth.
+          </p>
+          <div class="cards-container">
+            <div class="card">
+
+              <img src="D:\MINI_PROJECT\USER PROFILE.gif" alt="Mentorship">
+              <h3>Mentorship</h3>
+              <p>Receive guidance from experienced alumni to shape your career path.</p>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/200" alt="Opportunities">
+              <h3>Opportunities</h3>
+              <p>Unlock exclusive job and internship opportunities shared by alumni.</p>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/200" alt="Collaboration">
+              <h3>Collaboration</h3>
+              <p>Work together on projects and research to create impactful solutions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+            
+      
+      <section id="stories-section">
+        <h2 class="stories-heading hyper-text">✨ Inspiring Stories ✨</h2>
+        <div class="story-container">
+          <!-- <div class="story-card"> -->
+            <div class="container">
+              <div class="marquee" id="marquee1">
+                <!-- First Row of Reviews -->
+              </div>
+              <div class="marquee reverse" id="marquee2">
+                <!-- Second Row of Reviews -->
+              </div>
+              <div class="gradient gradient-left"></div>
+              <div class="gradient gradient-right"></div>
+            </div>
+          <div class="elements"></div>
+
+        </div>
+
+      </section>
+      
+      
+    <div class="footer">
+    <h3>Follow Us</h3>
+    <div class="links">
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">🌐 Facebook</a>
+      <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+      <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+      <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+    </div>
+    <p>© 2024 Your Company. All rights reserved.</p>
+    <div class="wave"></div>
+  </div>
+  <script>
+    // Reviews data
+const reviews = [
+{
+  name: "Jack",
+  username: "@jack",
+  body: "I've never seen anything like this before. It's amazing. I love it.",
+  img: "https://avatar.vercel.sh/jack",
+},
+{
+  name: "Jill",
+  username: "@jill",
+  body: "I don't know what to say. I'm speechless. This is amazing.",
+  img: "https://avatar.vercel.sh/jill",
+},
+{
+  name: "John",
+  username: "@john",
+  body: "I'm at a loss for words. This is amazing. I love it.",
+  img: "https://avatar.vercel.sh/john",
+},
+{
+  name: "Jane",
+  username: "@jane",
+  body: "I'm at a loss for words. This is amazing. I love it.",
+  img: "https://avatar.vercel.sh/jane",
+},
+{
+  name: "Jenny",
+  username: "@jenny",
+  body: "I'm at a loss for words. This is amazing. I love it.",
+  img: "https://avatar.vercel.sh/jenny",
+},
+{
+  name: "James",
+  username: "@james",
+  body: "I'm at a loss for words. This is amazing. I love it.",
+  img: "https://avatar.vercel.sh/james",
+},
+];
+
+// Split reviews into two rows
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
+
+// Function to render reviews
+function renderReviews(reviews, containerId) {
+const container = document.getElementById(containerId);
+reviews.forEach((review) => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <div class="card-header">
+      <img src="${review.img}" alt="${review.name}">
+      <div>
+        <p class="card-name">${review.name}</p>
+        <p class="card-username">${review.username}</p>
+      </div>
+    </div>
+    <p class="card-body">${review.body}</p>
+  `;
+  container.appendChild(card);
+});
+}
+
+// Render both rows
+renderReviews(firstRow, "marquee1");
+renderReviews(secondRow, "marquee2");
+
+  </script>
+    <script src="home.js"></script>
+  </body>
+  </html>
+  

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <div class="registration-container">
+        <div class="form-box">
+            <h2 style="color:white; display:block; padding-bottom:1px">Register</h2>
+            <form>
+<!-- First Name -->
+<div class="input-box">
+    <input type="text" required placeholder="First Name">
+</div>
+
+<!-- Last Name -->
+<div class="input-box">
+    <input type="text" id="last-name" name="last-name" required placeholder="Last Name">
+</div>
+
+<!-- Email -->
+<div class="input-box">
+    <input type="email" id="email" name="email" required placeholder="Email">
+</div>
+
+<!-- Contact Number -->
+<div class="input-box">
+    <input type="tel" id="contact-number" name="contact-number" required pattern="[0-9]{10}" title="Enter a valid 10-digit number" placeholder="Contact Number">
+</div>
+
+<!-- Stream -->
+<div class="input-box">
+    <input type="text" id="stream" name="stream" required placeholder="Stream">
+</div>
+
+<!-- Year of Passing -->
+<div class="input-box">
+    <input type="number" id="year-of-passing" name="year-of-passing" required min="1900" max="2099" placeholder="Year of Passing">
+</div>
+
+
+<div class="password-group">
+<!-- Password -->
+<div class="input-box">
+    <input type="password" placeholder="Password" required>
+</div>
+
+<!-- Confirm Password -->
+<div class="input-box">
+    <input type="password" placeholder="Confirm Password" required>
+</div>
+</div>
+          <!-- Dropdown: Student or Alumni -->
+          <div class="input-box">
+            <select required>
+                <option value="" disabled selected>Select Student or Alumni</option>
+                <option value="student">Student</option>
+                <option value="alumni">Alumni</option>
+            </select>
+        </div>
+        
+
+                <!-- Submit Button -->
+                <button type="submit">Register</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
