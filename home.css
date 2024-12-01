@@ -123,16 +123,16 @@ body {
   .navbar {
     position: fixed;
     top: 0;
-    left: 220px; /* Adjusted for sidebar */
+    left: 100px; /* Adjusted for sidebar */
     width: calc(100% - 220px);
-    backdrop-filter: blur(10px); /* Glass effect */
+    /* backdrop-filter: blur(10px);  */
     /* background: rgba(0, 0, 0, 0.2); */
     /*border-bottom: 1px solid rgba(255, 255, 255, 0.2);*/
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 15px;
   }
   
   .navbar ul {
@@ -222,7 +222,7 @@ body {
     align-items: center;
     text-align: center; */
     /* padding: 20px; */
-    background: linear-gradient(45deg, #1511eb, #2575fc , #729fec);
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
     color: white;
     overflow: hidden;
   }
@@ -297,8 +297,10 @@ body {
 /* About Section Styles */
 #about-section {
     height: 100vh;
-    background: linear-gradient(45deg, #1511eb, #2575fc , #729fec);
-    color: #333;
+    /* background: linear-gradient(45deg, #1511eb, #2575fc , #729fec); */
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -461,7 +463,9 @@ body {
 
 /* Section styles */
 #stories-section {
-  background: linear-gradient(45deg, #1511eb, #2575fc , #729fec);
+  /* background: linear-gradient(45deg, #1511eb, #2575fc , #729fec); */
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
   min-height: 100vh;
   padding: 50px 20px;
   color: #fff;
@@ -701,7 +705,9 @@ body {
             width: 100%;
             overflow: hidden;
             border: 1px solid #288bf4;
-            background: linear-gradient(45deg, #1511eb, #2575fc , #729fec);
+            /* background: linear-gradient(45deg, #1511eb, #2575fc , #729fec); */
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
             border-radius: 10px;
             box-shadow: 0 4px 8px linear-gradient(45deg, #1511eb, #2575fc , #729fec);
           }
