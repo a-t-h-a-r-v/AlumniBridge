@@ -79,7 +79,139 @@
 }
 
 
-
+/* General Container Setup */
+.containers {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #24243e;
+    border-radius: 50%;
+    left:50%
+  }
+  
+  /* Center Title */
+  .center-title {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #000, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 10;
+  }
+  
+  /* Inner Orbit */
+  .inner-orbit {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    animation: rotate-clockwise 8s linear infinite;
+    color: white;
+  }
+  
+  .inner-orbit .icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .inner-orbit .whatsapp {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .inner-orbit .github {
+    background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .inner-orbit .notion {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg');
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .inner-orbit .slack {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg');
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Outer Orbit */
+  .outer-orbit {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    animation: rotate-anticlockwise 12s linear infinite;
+  }
+  
+  .outer-orbit .icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .outer-orbit .drive {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png');
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .outer-orbit .facebook {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg');
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .outer-orbit .instagram {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .outer-orbit .twitter {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg');
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Rotating Animations */
+  @keyframes rotate-clockwise {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate-anticlockwise {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
 
           </style>
     
@@ -125,11 +257,30 @@
     
       <section id="about-section" class="animate-section">
         <div class="about-content">
-          <h2 class="about-heading">About Us</h2>
-          <p class="about-description">
-            Our platform bridges the gap between students and alumni, creating opportunities for collaboration, mentorship, and growth.
-          </p>
-          <div class="cards-container">
+          <h2 class="about-heading" style="left:10%">About Us</h2>
+          <p class="about-description" >
+            Our platform bridges the gap between students and alumni, <br> creating opportunities for collaboration, mentorship, and growth.
+        </p>
+          <div class="containers">
+            <div class="center-title">Circles</div>
+            
+            <!-- Inner Orbit -->
+            <div class="orbit inner-orbit">
+              <div class="icon whatsapp"></div>
+              <div class="icon github"></div>
+              <div class="icon notion"></div>
+              <div class="icon slack"></div>
+            </div>
+        
+            <!-- Outer Orbit -->
+            <div class="orbit outer-orbit">
+              <div class="icon drive"></div>
+              <div class="icon facebook"></div>
+              <div class="icon instagram"></div>
+              <div class="icon twitter"></div>
+            </div>
+          </div>
+          <!-- <div class="cards-container">
             <div class="card">
 
               <img src="D:\MINI_PROJECT\USER PROFILE.gif" alt="Mentorship">
@@ -146,7 +297,7 @@
               <h3>Collaboration</h3>
               <p>Work together on projects and research to create impactful solutions.</p>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
             
@@ -172,23 +323,64 @@
       </section>
       
       
-    <div class="footer">
-    <h3>Follow Us</h3>
-    <div class="links">
-      <a href="#about">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank">🌐 Facebook</a>
-      <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
-      <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-      <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
-    </div>
-    <p>© 2024 Your Company. All rights reserved.</p>
-    <div class="wave"></div>
-  </div>
+      <footer class="college-footer">
+        <div class="footer-container">
+          <!-- About Section -->
+          <div class="footer-about">
+            <h3>About KLE Technological University</h3>
+            <p>
+              KLE Technological University stands for academic excellence, innovative research, and a commitment to shaping future leaders.
+            </p>
+          </div>
+      
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Admissions</a></li>
+              <li><a href="#">Departments</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Alumni</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>KLE Technological University</p>
+            <p>Vidyanagar, Hubballi, Karnataka - 580031</p>
+            <p>Email: <a href="mailto:info@kletech.ac.in">info@kletech.ac.in</a></p>
+            <p>Phone: +91 836 2378 101</p>
+          </div>
+      
+          <!-- Social Media Section -->
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://twitter.com" target="_blank" class="social-icon twitter">
+                <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-icon linkedin">
+                <img src="https://img.icons8.com/color/48/000000/linkedin-circled--v1.png" alt="LinkedIn" />
+              </a>
+              <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+                <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" />
+              </a>
+              <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+                <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram" />
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+          <p>&copy; 2024 KLE Technological University. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+        </div>
+      </footer>
+      
   <script>
     // Reviews data
 const reviews = [
