@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Page</title>
+    <!-- <link rel="stylesheet" href="job_internship.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+        }
+        
+        /* General Styles */
+        body {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+/* Sidebar styling */
+.sidebar {
+  
+  width: 80px; /* Initial width for only icons */
+  height: 100vh;
+  padding-top: 9%;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  backdrop-filter: blur(15px) saturate(150%); /* Enhanced glass effect with blur and saturation */
+  -webkit-backdrop-filter: blur(15px) saturate(150%); /* For Safari support */
+  border-right: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for glass look */
+  color: #59ffd7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  */
+
+
+}
+
+.sidebar.open {
+  width: 250px; /* Expand width to show text */
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  text-decoration: none;
+  color: #59ffd7;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a i {
+  font-size: 20px;
+  min-width: 30px; /* Align icons properly */
+  text-align: center;
+}
+
+.sidebar a span {
+  margin-left: 10px;
+  opacity: 0; /* Text hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.open a span {
+  opacity: 1; /* Show text when sidebar is open */
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.2); /* Transparent hover background */
+  border-radius: 5px; /* Add smooth rounding */
+}
+
+/* Hamburger menu */
+.hamburger {
+  font-size: 25px;
+  cursor: pointer;
+  /* padding-top: 15%; */
+  padding: 10px;
+  color: #59ffd7;
+  position: fixed;
+  left: 10px;
+  top: 80px;
+  z-index: 1000;
+}
+
+/* Additional Glass Effect Styling */
+.sidebar {
+  background: rgba(11, 3, 45, 0.3); /* Adjusted for darker glass */
+}
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 100px; /* Adjusted for sidebar */
+    width: calc(100% - 220px);
+    /* backdrop-filter: blur(10px);  */
+    /* background: rgba(0, 0, 0, 0.2); */
+    /*border-bottom: 1px solid rgba(255, 255, 255, 0.2);*/
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    color: #f0a500;
+  }
+  
+  .search-bar {
+    
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    padding: 0 15px;
+    /* padding-left: 70%; */
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Section Styles */
+  section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  
+
+.logo {
+    width: 20rem; /* Adjust logo size as needed */
+    height: auto;
+   
+}
+
+    </style>
+</head>
+
+
+<body>
+      <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#home"><i class="fa fa-fw fa-home"></i> <span>Home</span></a>
+    <a href="#about-section"><i class="fa fa-fw fa-info-circle"></i> <span>About</span></a>
+    <a href="#stories-section"><i class="fa fa-fw fa-book"></i> <span>Stories</span></a>
+    <a href="job_internship.html"><i class="fa fa-fw fa-briefcase"></i> <span>Jobs</span></a>
+    <a href="#profile"><i class="fa fa-fw fa-user-tie"></i> <span>Profile</span></a>
+    <a href="#network"><i class="fa fa-fw fa-user-plus"></i> <span>Networks</span></a>
+    <a href="#research"><i class="fa fa-fw fa-book-open"></i> <span>Research</span></a>
+    <a href="#developers"><i class="fa fa-fw fa-users"></i> <span>Developers</span></a>
+  </div>
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <img src="logo.png" alt="Logo" class="logo">
+  
+    <input type="text" class="search-bar" placeholder="Search...">
+  </nav>
+
+ 
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+          }
+          
+          
+          // Highlight the active section in the navbar
+          window.addEventListener("scroll", () => {
+              const sections = document.querySelectorAll("section");
+              const navLinks = document.querySelectorAll("nav ul li a");
+            
+              sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                  navLinks.forEach((link) => link.classList.remove("active"));
+                  navLinks[index].classList.add("active");
+                }
+              });
+            });
+            document.addEventListener("DOMContentLoaded", () => {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("visible");
+                    } else {
+                      entry.target.classList.remove("visible"); // Reapply animations on re-entry
+                    }
+                  });
+                },
+                { threshold: 0.4 } // Trigger when 20% of the section is visible
+              );
+            
+              // Select the sections to observe
+              const sections = document.querySelectorAll(".animate-section");
+              sections.forEach((section) => observer.observe(section));
+            });
+          
+          
+          
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Page</title>
+    <link rel="stylesheet" href="job_internship.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            overflow-x: hidden;
+            overflow-y: scroll; /* Allow vertical scrolling */
+
+            height: 100vh;
+            scroll-snap-type: y mandatory;  /* Enable scroll snapping */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+
+
+
+        /* Header Section Styling */
+        header {
+            background-color: #fff;
+            padding: 40px;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh; /* Full page height */
+            scroll-snap-align: start; /* Align this section at the top when scrolling */
+        }
+
+        /* Title Section Container */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Content Styling */
+        .content {
+            flex: 1;
+            color: white;
+            text-align: left;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: right;
+        }
+
+        .illustration {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Filters Section */
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        /* Job Listings Section */
+        .job-listings {
+            margin-top: 20px;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+        }
+
+        .close-btn {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+      /* Section Styling */
+section {
+    height: 100vh; /* Full viewport height */
+    scroll-snap-align: start; /* Snap each section to the top of the viewport */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+        /* Job Listings Items Styling */
+        .job-item {
+            margin-bottom: 15px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button Styling */
+        button {
+            padding: 10px 20px;
+            background-color: #2f8e89;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Filters Section */
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .filters input, .filters select, .filters button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .filters input:focus, .filters select:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        .filters button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filters button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+       /* Job Listings Section */
+.job-listings {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between; /* Distribute items evenly */
+    gap: 20px; /* Add space between the items */
+    margin-top: 20px;
+}
+
+.job-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33% - 20px); /* Each item will take up 1/3 of the container */
+    min-width: 280px; /* Ensure it doesn't get too small */
+}
+
+.job-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.job-item p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.job-item button {
+    padding: 8px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.job-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Job Filters Section */
+.filters {
+    display: flex;
+    flex-wrap: wrap; /* Allow elements to wrap */
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filters input, .filters select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 30%; /* Control the size of the inputs */
+    min-width: 200px;
+}
+
+.filters button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #218838;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #FF4136;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #E63628;
+}
+
+
+
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  header img {
+    height: 50px;
+  }
+  
+  header h1, header h2 {
+    margin: 0;
+  }
+  
+  header h2 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  
+  /* Job Listings */
+  .job-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .job-card {
+    padding: 15px;
+    background-color: #463973;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .job-card h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .job-details p {
+    margin: 5px 0;
+  }
+  
+  .skills-required {
+    background-color: #00c8ff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  /* Read More/Less */
+  .job-description .hidden-content {
+    display: none;
+  }
+  
+  .read-more {
+    color: #00c8ff;
+    cursor: pointer;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    position: relative;
+    background-color: #463973;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .popup-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .popup-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .popup-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+    </style>
+</head>
+<body>
+    <div id="sidebar-nav"></div>
+<section class="first">
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="content">
+                <h1 class="title">Internship</h1>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero feugiat, faucibus libero id, scelerisque quam.
+                </p>
+                <button class="learn-more">Learn More</button>
+            </div>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/736x/95/46/d4/9546d495875e793aadec75cc50b02133.jpg" alt="Internship Illustration" class="illustration">
+            </div>
+        </div>
+    </header>
+</section>
+    <!-- <div id="sidebar-nav"></div> -->
+    <!-- Job Listings Section -->
+
+    <div class="container">
+
+
+        <!-- Job Listings -->
+        <div class="job-listings">
+          <!-- Job Card -->
+          <div class="job-card">
+            <div class="job-details">
+              <h3>Software Engineer</h3>
+              <p>Tech Company</p>
+              <p>Posted 2 Weeks Ago | WFH</p>
+              <p class="job-description">
+                This job is for freshers with basic knowledge of coding in Python and JavaScript. 
+                They will work on developing scalable applications. <span class="hidden-content"> 
+                Strong debugging skills and an understanding of APIs is required. </span>
+                <span class="read-more" onclick="toggleDescription(this)">Read More</span>
+              </p>
+              <button class="skills-required" onclick="openSkillsPopup(['Python', 'JavaScript', 'APIs', 'Debugging'])">Skills Required</button>
+            </div>
+          </div>
+    
+          <!-- Another Job Card -->
+          <div class="job-card">
+            <div class="job-details">
+              <h3>Marketing Intern</h3>
+              <p>Company Name</p>
+              <p>Posted 1 Week Ago | Offline</p>
+              <p class="job-description">
+                This internship involves learning about digital marketing strategies and customer engagement. 
+                <span class="hidden-content">Candidates must be familiar with SEO and social media campaigns.</span>
+                <span class="read-more" onclick="toggleDescription(this)">Read More</span>
+              </p>
+              <button class="skills-required" onclick="openSkillsPopup(['SEO', 'Social Media', 'Analytics'])">Skills Required</button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Skills Popup Modal -->
+        <div id="skills-popup" class="popup">
+          <div class="popup-content">
+            <span class="close-btn" onclick="closeSkillsPopup()">&times;</span>
+            <h3>Required Skills</h3>
+            <ul id="skills-list"></ul>
+          </div>
+        </div>
+      </div>
+    <script>
+        // Dynamically load sidebar_nav.html
+        fetch('sidebar_nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-nav').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading sidebar_nav.html:', error));
+
+            const modal = document.getElementById('job-modal');
+
+function openModal() {
+    modal.style.display = 'flex';
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
+// Toggle the job description visibility
+function toggleDescription(element) {
+    const hiddenContent = element.previousElementSibling;
+    if (hiddenContent.style.display === "inline") {
+      hiddenContent.style.display = "none";
+      element.textContent = "Read More";
+    } else {
+      hiddenContent.style.display = "inline";
+      element.textContent = "Read Less";
+    }
+  }
+  
+  // Open the skills popup and display skills
+  function openSkillsPopup(skills) {
+    const skillsList = document.getElementById("skills-list");
+    skillsList.innerHTML = ""; // Clear previous skills
+  
+    skills.forEach(skill => {
+      const li = document.createElement("li");
+      li.textContent = skill;
+      skillsList.appendChild(li);
+    });
+  
+    const popup = document.getElementById("skills-popup");
+    popup.style.display = "flex";
+  }
+  
+  // Close the skills popup
+  function closeSkillsPopup() {
+    const popup = document.getElementById("skills-popup");
+    popup.style.display = "none";
+  }
+  // Toggle the job description visibility
+  function toggleDescription(element) {
+    const hiddenContent = element.previousElementSibling;
+    if (hiddenContent.style.display === "inline") {
+      hiddenContent.style.display = "none";
+      element.textContent = "Read More";
+    } else {
+      hiddenContent.style.display = "inline";
+      element.textContent = "Read Less";
+    }
+  }
+  
+  // Open the skills popup and display skills
+  function openSkillsPopup(skills) {
+    const skillsList = document.getElementById("skills-list");
+    skillsList.innerHTML = ""; // Clear previous skills
+  
+    skills.forEach(skill => {
+      const li = document.createElement("li");
+      li.textContent = skill;
+      skillsList.appendChild(li);
+    });
+  
+    const popup = document.getElementById("skills-popup");
+    popup.style.display = "flex";
+  }
+  
+  // Close the skills popup
+  function closeSkillsPopup() {
+    const popup = document.getElementById("skills-popup");
+    popup.style.display = "none";
+  }
+  
+
+    </script>
+
+    <script src="job_internship.js"></script>
+</body>
+</html>

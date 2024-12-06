@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events in KLE Tech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-bar {
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            width: 80%;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        .search-bar button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .event-card {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .event-card img {
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+        }
+        .event-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .event-details h2, .event-details p {
+            margin: 5px 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .add-event {
+            margin: 20px;
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container {
+            width: 80%;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar-nav"></div>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for upcoming Events in KLE Tech">
+        <button onclick="sortEvents()">Sort by date</button>
+    </div>
+    
+    <div id="events-container">
+        <!-- Event cards will be dynamically generated here -->
+    </div>
+
+    <button class="add-event" onclick="showAddEventForm()">Add Event</button>
+
+    <div class="form-container" id="form-container" style="display: none;">
+        <input type="text" id="event-name" placeholder="Event Name">
+        <input type="text" id="event-date" placeholder="Event Date (YYYY-MM-DD)">
+        <input type="text" id="event-mode" placeholder="Offline / Online">
+        <input type="text" id="registration-link" placeholder="Registration Link">
+        <textarea id="event-description" placeholder="Event Description"></textarea>
+        <button onclick="addEvent()">Submit</button>
+    </div>
+
+    <script>
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+          }
+          
+          
+          // Highlight the active section in the navbar
+          window.addEventListener("scroll", () => {
+              const sections = document.querySelectorAll("section");
+              const navLinks = document.querySelectorAll("nav ul li a");
+            
+              sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                  navLinks.forEach((link) => link.classList.remove("active"));
+                  navLinks[index].classList.add("active");
+                }
+              });
+            });
+            document.addEventListener("DOMContentLoaded", () => {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("visible");
+                    } else {
+                      entry.target.classList.remove("visible"); // Reapply animations on re-entry
+                    }
+                  });
+                },
+                { threshold: 0.4 } // Trigger when 20% of the section is visible
+              );
+            
+              // Select the sections to observe
+              const sections = document.querySelectorAll(".animate-section");
+              sections.forEach((section) => observer.observe(section));
+            });
+          
+  
+            
+        
+        let events = [
+            {
+                name: "Tech Talk",
+                date: "2024-12-10",
+                mode: "Online",
+                link: "http://example.com/register",
+                description: "Join us for an enlightening tech talk on the latest trends in technology.",
+                image: "https://via.placeholder.com/100"
+            },
+            {
+                name: "Hackathon",
+                date: "2024-12-15",
+                mode: "Offline",
+                link: "http://example.com/register",
+                description: "Compete in our annual hackathon and showcase your coding skills.",
+                image: "https://via.placeholder.com/100"
+            },
+            {
+                name: "Workshop",
+                date: "2024-12-05",
+                mode: "Offline",
+                link: "http://example.com/register",
+                description: "Hands-on workshop on building web applications.",
+                image: "https://via.placeholder.com/100"
+            },
+        ];
+
+        function displayEvents(filteredEvents = events) {
+            const container = document.getElementById('events-container');
+            container.innerHTML = '';
+            filteredEvents.forEach(event => {
+                const eventCard = document.createElement('div');
+                eventCard.className = 'event-card';
+                eventCard.innerHTML = `
+                    <div class="event-details">
+                        <h2>${event.name}</h2>
+                        <p>${event.date}</p>
+                        <p>${event.mode}</p>
+                        <p><a href="${event.link}" target="_blank">Registration Link</a></p>
+                        <p>${event.description}</p>
+                    </div>
+                    <img src="${event.image}" alt="Event Image">
+                `;
+                container.appendChild(eventCard);
+            });
+        }
+
+        function sortEvents() {
+            events.sort((a, b) => new Date(a.date) - new Date(b.date));
+            displayEvents();
+        }
+
+        function showAddEventForm() {
+            document.getElementById('form-container').style.display = 'flex';
+        }
+
+        function addEvent() {
+            const name = document.getElementById('event-name').value;
+            const date = document.getElementById('event-date').value;
+            const mode = document.getElementById('event-mode').value;
+            const link = document.getElementById('registration-link').value;
+            const description = document.getElementById('event-description').value;
+            
+            if (name && date && mode && link && description) {
+                events.push({
+                    name,
+                    date,
+                    mode,
+                    link,
+                    description,
+                    image: "https://via.placeholder.com/100"
+                });
+                document.getElementById('form-container').style.display = 'none';
+                displayEvents();
+            } else {
+                alert("Please fill out all fields.");
+            }
+        }
+
+        document.getElementById('search-input').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const filteredEvents = events.filter(event => event.name.toLowerCase().includes(query));
+            displayEvents(filteredEvents);
+        });
+
+        displayEvents();
+    </script>
+</body>
+</html>
