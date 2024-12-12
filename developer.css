@@ -105,9 +105,9 @@ section {
     color: #fff;
     padding: 20px;
 }
-#welcome-section {
+#developer-cards {
     height: 100vh;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    /*background: linear-gradient(to right, #0f0c29, #302b63, #24243e);*/
     color: #fff;
     overflow: hidden;
 }
@@ -327,4 +327,18 @@ section {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
+}
+#description-section {
+    height: 100vh;
+    /*background: linear-gradient(to right, #0f0c29, #302b63, #24243e);*/
+    color: #fff;
+    overflow: hidden;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 20px;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    overflow: hidden;
 }
