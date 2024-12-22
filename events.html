@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Events in KLE Tech</title>
     <style>
+        .element {
+            background-image: url('UPCOMING EVENTS.gif');
+            background-size: contain; /* Ensure the entire GIF is visible */
+            background-repeat: no-repeat; /* Prevent tiling of the GIF */
+            background-position: center;
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 50%; /* Position it vertically in the center */
+            right: 1.5%; /* Position it on the right side */
+            transform: translateY(-50%); /* Adjust for exact vertical centering */
+        }
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #141E30, #243B55);
@@ -19,26 +31,84 @@
             margin: 20px;
             display: flex;
             align-items: center;
-            width: 80%;
+            width: 90%; /* Increased width for a better layout */
+            max-width: 800px; /* To limit the maximum width */
         }
+        
         .search-bar input {
-            width: 100%;
-            padding: 10px;
+            flex: 1; /* Ensures the input takes up the remaining space */
+            padding: 10px; /* Increased padding for a better look */
             border-radius: 25px;
+            border: 3px solid transparent; /* Base border */
+
             border: none;
             outline: none;
             font-size: 16px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            animation: glitter-border 1.5s infinite;
+
         }
+        
+        .search-bar input:focus {
+            animation: glitter-border 1.5s infinite;
+            background: #f9f9f9; /* Slightly different background on focus */
+        }
+        
         .search-bar button {
             margin-left: 10px;
-            padding: 10px 20px;
+            padding: 12px 25px; /* Adjusted padding for better proportions */
             border-radius: 25px;
+            border: 3px solid transparent;
+            background: linear-gradient(to right, #6a11cb, #3716f1);
+            
             border: none;
-            background-color: #4CAF50;
+            background-color: #6a11cb;
             color: white;
             cursor: pointer;
             font-size: 16px;
+            animation: glitter-border 1.5s infinite;
+
+            transition: background-color 0.3s ease; /* Smooth hover effect */
         }
+        .search-bar button:hover {
+            animation: glitter-border 1.5s infinite;
+            background: linear-gradient(to right, #45a049, #4CAF50);
+        }
+
+        /* Glitter Border Animation */
+@keyframes glitter-border {
+    0% {
+        box-shadow: 0 0 5px #ff5fad, 0 0 10px #ff5fad;
+    }
+    25% {
+        box-shadow: 0 0 5px #ffea5c, 0 0 10px #ffea5c;
+    }
+    50% {
+        box-shadow: 0 0 5px #5cffe2, 0 0 10px #5cffe2;
+    }
+    75% {
+        box-shadow: 0 0 5px #5cafff, 0 0 10px #5cafff;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff5fad, 0 0 10px #ff5fad;
+    }
+}
+
+        .controls {
+            display: flex;
+            flex-direction: column; /* Stack the elements for better responsiveness */
+            align-items: center;
+            margin-top: 10%; /* Proper spacing */
+            gap: 20px; /* Adds spacing between elements */
+        }
+        
+        @media (min-width: 768px) {
+            .controls {
+                flex-direction: row; /* Align in a row for larger screens */
+                justify-content: space-between;
+            }
+        }
+        
         .event-card {
             background: linear-gradient(to right, #6a11cb, #2575fc);
             border-radius: 15px;
@@ -67,14 +137,19 @@
             to { opacity: 1; }
         }
         .add-event {
-            margin: 20px;
+            margin: 10px;
+            margin-bottom: 10%;
             padding: 10px;
             border-radius: 25px;
             border: none;
-            background-color: #4CAF50;
+            background: linear-gradient(to right, #6a11cb, #3716f1);
+
+            background-color: #6a11cb;
             color: white;
             cursor: pointer;
             font-size: 16px;
+            animation: glitter-border 1.5s infinite;
+
         }
         .form-container {
             width: 80%;
@@ -102,23 +177,31 @@
             font-size: 16px;
             margin-top: 10px;
         }
+       
     </style>
 </head>
 <body>
+    <!-- <div id="sidebar-nav"></div> -->
     <div id="sidebar-nav"></div>
+    <div class="element"></div>
 
-    <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Search for upcoming Events in KLE Tech">
-        <button onclick="sortEvents()">Sort by date</button>
+    <div class="controls">
+        <div class="search-bar" >
+            <input type="text" id="search-input" placeholder="Search for upcoming Events in KLE Tech">
+            <button onclick="sortEvents()">Sort </button>
+        </div>
     </div>
     
-    <div id="events-container">
+       
+<section class="event" style="display: relative ; ">
+
+  
+    <div id="events-container" >
         <!-- Event cards will be dynamically generated here -->
     </div>
 
-    <button class="add-event" onclick="showAddEventForm()">Add Event</button>
 
-    <div class="form-container" id="form-container" style="display: none;">
+    <div class="form-container" id="form-container" style="display: none ; ">
         <input type="text" id="event-name" placeholder="Event Name">
         <input type="text" id="event-date" placeholder="Event Date (YYYY-MM-DD)">
         <input type="text" id="event-mode" placeholder="Offline / Online">
@@ -126,8 +209,22 @@
         <textarea id="event-description" placeholder="Event Description"></textarea>
         <button onclick="addEvent()">Submit</button>
     </div>
+</section>
+<button class="add-event" onclick="showAddEventForm()">Add Event</button>
 
     <script>
+
+                // Dynamically load sidebar_nav.html
+                fetch('sidebar_nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-nav').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar_nav.html:', error));
+    
+                const modal = document.getElementById('job-modal');
+
+                
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
@@ -177,7 +274,7 @@
                 mode: "Online",
                 link: "http://example.com/register",
                 description: "Join us for an enlightening tech talk on the latest trends in technology.",
-                image: "https://via.placeholder.com/100"
+                image: "https://informationage-production.s3.amazonaws.com/uploads/2022/10/tech-events-diary.jpg"
             },
             {
                 name: "Hackathon",
@@ -185,7 +282,7 @@
                 mode: "Offline",
                 link: "http://example.com/register",
                 description: "Compete in our annual hackathon and showcase your coding skills.",
-                image: "https://via.placeholder.com/100"
+                image: "https://media.licdn.com/dms/image/C4D12AQF1MDORJSI0zg/article-cover_image-shrink_600_2000/0/1573551014437?e=2147483647&v=beta&t=3G_RSm4MIqkKfrC-D7oaKv53H3XPJD2ULWpCFjVXRI0"
             },
             {
                 name: "Workshop",
@@ -193,7 +290,7 @@
                 mode: "Offline",
                 link: "http://example.com/register",
                 description: "Hands-on workshop on building web applications.",
-                image: "https://via.placeholder.com/100"
+                image: "https://revstarconsulting.com/hubfs/shutterstock_2413270169%20%281%29.jpg"
             },
         ];
 

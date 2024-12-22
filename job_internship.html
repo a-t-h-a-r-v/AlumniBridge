@@ -311,6 +311,8 @@ section {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    right: 1.5%;
+    width: 80%;
   }
   
   /* Header */
@@ -339,31 +341,37 @@ section {
     margin-top: 10px;
   }
   
-  /* Job Listings */
+  /* Job Listings
+   padding-left: 20%;
+  */
   .job-listings {
+   
+   
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
   
   .job-card {
+    
     padding: 15px;
     background-color: #463973;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+   
   }
   
   .job-card h3 {
     font-size: 20px;
     margin: 0;
   }
-  
+  /*
   .job-details p {
     margin: 5px 0;
   }
-  
+  */
   .skills-required {
     background-color: #00c8ff;
     border: none;
@@ -424,6 +432,33 @@ section {
     cursor: pointer;
   }
   
+
+  .element {
+    background-image: url('JOB.gif');
+    background-size: contain; /* Ensure the entire GIF is visible */
+    background-repeat: no-repeat; /* Prevent tiling of the GIF */
+    background-position: center;
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 50%; /* Position it vertically in the center */
+    right: 1.5%; /* Position it on the right side */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+}
+
+.elements {
+  background-image: url('JOB.gif');
+  background-size: contain; /* Ensure the entire GIF is visible */
+  background-repeat: no-repeat; /* Prevent tiling of the GIF */
+  background-position: center;
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  top: 50%; /* Position it vertically in the center */
+  right: 0.1%; /* Position it on the right side */
+  transform: translateY(-50%); /* Adjust for exact vertical centering */
+}
+
     </style>
 </head>
 <body>
@@ -439,11 +474,14 @@ section {
                 </p>
                 <button class="learn-more">Learn More</button>
             </div>
-            <div class="image-container">
+
+            <!-- <div class="image-container">
                 <img src="https://i.pinimg.com/736x/95/46/d4/9546d495875e793aadec75cc50b02133.jpg" alt="Internship Illustration" class="illustration">
-            </div>
+            </div> -->
         </div>
     </header>
+    <div class="element"></div>
+
 </section>
     <!-- <div id="sidebar-nav"></div> -->
     <!-- Job Listings Section -->
@@ -493,7 +531,10 @@ section {
             <ul id="skills-list"></ul>
           </div>
         </div>
+        <!-- <div class="elements"></div> -->
+
       </div>
+
     <script>
         // Dynamically load sidebar_nav.html
         fetch('sidebar_nav.html')

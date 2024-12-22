@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn-style Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+      /* General Styles */
+
+    </style>
+</head>
+<body>
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleSidebar()">☰</div>
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+          <a href="#home"><i class="fa fa-fw fa-home"></i> <span>Home</span></a>
+          <a href="#about-section"><i class="fa fa-fw fa-info-circle"></i> <span>About</span></a>
+          <a href="#stories-section"><i class="fa fa-fw fa-book"></i> <span>Stories</span></a>
+          <a href="job_internship.html"><i class="fa fa-fw fa-briefcase"></i> <span>Jobs</span></a>
+          <a href="profile.html"><i class="fa fa-fw fa-user-tie"></i> <span>Profile</span></a>
+          <a href="network.html"><i class="fa fa-fw fa-user-plus"></i> <span>Networks</span></a>
+          <a href="events.html"><i class="fa fa-fw fa-book-open"></i> <span>Events</span></a>
+          <a href="developer.html"><i class="fa fa-fw fa-users"></i> <span>Developers</span></a>
+        </div>
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+          <img src="logo.png" alt="Logo" class="logo">
+        
+          <input type="text" class="search-bar" placeholder="Search...">
+        </nav>
+      
+
+    <div class="container" style="margin-top: 10%;  ">
+        <!-- Profile Header -->
+        <div class="profile-header">
+          <div class="profile-picture-container">
+              <img src="profile-pic-placeholder.png" alt="Profile Picture" id="profile-picture" class="profile-picture">
+              <label for="upload-profile-pic" class="upload-btn"></label>
+              <input type="file" id="upload-profile-pic" accept="image/*" style="display: none;" onchange="handleProfilePhotoUpload(event)">
+          </div>
+          <div class="profile-info" style="margin-left:10%;">
+              <h1 id="name">Your Name <button class="edit-btn" onclick="openEditPopup('name')">✏️</button></h1>
+              <p id="position" style="color: black;">Your Position <button class="edit-btn" onclick="openEditPopup('position')">✏️</button></p>
+              <p id="location" style="color: black;">Your Location <button class="edit-btn" onclick="openEditPopup('location')">✏️</button></p>
+          </div>
+      </div>
+      
+      <!-- Popup for Editing -->
+      <div id="edit-popup" class="popup" style="display: none;">
+          <div class="popup-content">
+              <h3>Edit</h3>
+              <input type="text" id="edit-input" />
+              <div class="popup-buttons">
+                  <button onclick="saveEdit()">Save</button>
+                  <button onclick="closeEditPopup()">Cancel</button>
+              </div>
+          </div>
+      </div>
+      
+
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- About Section -->
+            <div class="about-section">
+              <h2 style="color: black;">About</h2>
+              <p id="about-text" style="color: black;">Write something about yourself here...</p>
+              <button class="edit-about-btn" onclick="openAboutPopup()">✏️</button>
+          </div>
+          
+          <!-- Popup for Editing About Section -->
+          <div id="about-popup" class="popup" style="display: none;">
+              <div class="popup-content">
+                  <h3>Edit About Section</h3>
+                  <textarea id="about-edit-text" rows="5" cols="40"></textarea>
+                  <div class="popup-buttons">
+                      <button onclick="saveAbout()">Save</button>
+                      <button onclick="closeAboutPopup()">Cancel</button>
+                  </div>
+              </div>
+          </div>
+          
+            <!-- Education Section -->
+            <div class="section">
+                <h2>Education <span class="edit-icon" onclick="openPopup('education')">✏️</span></h2>
+                <ul id="education-list">
+                    <li>Bachelor of Technology in Computer Science - KLE Technological University (2020-2024)</li>
+                </ul>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="section">
+                <h2>Experience <span class="edit-icon" onclick="openPopup('experience')">✏️</span></h2>
+                <ul id="experience-list">
+                    <li>Software Developer at XYZ (2020-2023)</li>
+                </ul>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="section">
+                <h2>Projects <span class="edit-icon" onclick="openPopup('projects')">✏️</span></h2>
+                <ul id="projects-list">
+                    <li>Project A: Description</li>
+                </ul>
+                <input type="file" id="upload-project" accept="application/pdf, image/*" onchange="uploadFile('projects')">
+                <label for="upload-project" class="upload-btn"></label>
+            </div>
+
+            <!-- Certificates Section -->
+            <div class="section">
+                <h2>Certificates <span class="edit-icon" onclick="openPopup('certificates')">✏️</span></h2>
+                <ul id="certificates-list">
+                    <li>Certificate 1: Details</li>
+                </ul>
+                <input type="file" id="upload-certificate" accept="application/pdf, image/*" onchange="uploadFile('certificates')">
+                <label for="upload-certificate" class="upload-btn"></label>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section">
+                <h2>Skills <span class="edit-icon" onclick="openPopup('skills')">✏️</span></h2>
+                <ul id="skills-list">
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <h2 id="popup-title">Edit Section</h2>
+
+            <!-- Education Fields -->
+            <div id="education-fields" class="popup-field-group" style="display: none;">
+                <input type="text" id="edu-degree" placeholder="Degree (e.g., B.Tech)">
+                <input type="text" id="edu-institute" placeholder="Institute Name">
+                <input type="text" id="edu-duration" placeholder="Duration (e.g., 2020-2024)">
+            </div>
+
+            <!-- General Input -->
+            <textarea id="popup-input"></textarea>
+
+            <button class="save-btn" onclick="savePopupChanges()">Save</button>
+        </div>
+    </div>
+<script>
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+  }
+  
+  
+  // Highlight the active section in the navbar
+  window.addEventListener("scroll", () => {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav ul li a");
+    
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          navLinks[index].classList.add("active");
+        }
+      });
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            } else {
+              entry.target.classList.remove("visible"); // Reapply animations on re-entry
+            }
+          });
+        },
+        { threshold: 0.4 } // Trigger when 20% of the section is visible
+      );
+    
+      // Select the sections to observe
+      const sections = document.querySelectorAll(".animate-section");
+      sections.forEach((section) => observer.observe(section));
+    });
+  
+  
+  let currentSection = "";
+
+// Function to open the popup
+function openPopup(sectionId) {
+    currentSection = sectionId;
+    document.getElementById("popup-modal").style.display = "flex";
+
+    const titleMap = {
+        education: "Edit Education",
+        experience: "Edit Experience",
+        projects: "Edit Projects",
+        certificates: "Edit Certificates",
+        skills: "Edit Skills",
+    };
+
+    document.getElementById("popup-title").innerText = titleMap[sectionId] || "Edit Section";
+
+    // Show specific input fields
+    if (sectionId === "education") {
+        document.getElementById("education-fields").style.display = "block";
+        document.getElementById("popup-input").style.display = "none";
+    } else {
+        document.getElementById("education-fields").style.display = "none";
+        document.getElementById("popup-input").style.display = "block";
+    }
+}
+
+function handleProfilePhotoUpload(event) {
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const profilePicture = document.getElementById('profile-picture');
+            profilePicture.src = e.target.result; // Set the uploaded image as the profile picture
+        };
+        reader.readAsDataURL(file);
+    } else {
+        alert("No file selected or file format not supported.");
+    }
+}
+
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("popup-modal").style.display = "none";
+}
+
+// Function to save popup changes
+function savePopupChanges() {
+    if (currentSection === "education") {
+        const degree = document.getElementById("edu-degree").value;
+        const institute = document.getElementById("edu-institute").value;
+        const duration = document.getElementById("edu-duration").value;
+
+        const newEducation = `<li>${degree} - ${institute} (${duration})</li>`;
+        document.getElementById("education-list").innerHTML += newEducation;
+    } else {
+        const updatedContent = document.getElementById("popup-input").value;
+        document.getElementById(`${currentSection}-list`).innerHTML += `<li>${updatedContent}</li>`;
+    }
+
+    closePopup();
+}
+
+// File Upload Handler
+function uploadFile(section) {
+    alert(`File uploaded for ${section} successfully!`);
+}
+
+// Function to open the popup
+function openAboutPopup() {
+  const aboutText = document.getElementById('about-text').innerText;
+  document.getElementById('about-edit-text').value = aboutText;
+  document.getElementById('about-popup').style.display = 'flex';
+}
+
+// Function to save changes
+function saveAbout() {
+  const updatedAbout = document.getElementById('about-edit-text').value;
+  document.getElementById('about-text').innerText = updatedAbout;
+  closeAboutPopup();
+}
+
+// Function to close the popup
+function closeAboutPopup() {
+  document.getElementById('about-popup').style.display = 'none';
+}
+
+let currentField = ""; // To keep track of the field being edited
+
+// Function to open the popup for editing
+function openEditPopup(field) {
+    currentField = field; // Set the field being edited
+    const currentValue = document.getElementById(field).innerText;
+    document.getElementById("edit-input").value = currentValue; // Pre-fill the input with current value
+    document.getElementById("edit-popup").style.display = "flex"; // Show the popup
+}
+
+// Function to save the edited value
+function saveEdit() {
+    const newValue = document.getElementById("edit-input").value;
+    document.getElementById(currentField).innerText = newValue; // Update the field with the new value
+    closeEditPopup(); // Close the popup
+}
+
+// Function to close the popup without saving
+function closeEditPopup() {
+    document.getElementById("edit-popup").style.display = "none";
+}
+
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
