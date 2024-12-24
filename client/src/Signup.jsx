@@ -45,6 +45,7 @@ const Signup = () => {
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>
           {/* First Name */}
+      <div className="input-box">
           <input
             type="text"
             value={first_name}
@@ -52,7 +53,8 @@ const Signup = () => {
             required
             placeholder="First Name"
           />
-
+      </div>
+      <div className="input-box">
           {/* Last Name */}
           <input
             type="text"
@@ -61,7 +63,8 @@ const Signup = () => {
             required
             placeholder="Last Name"
           />
-
+      </div>
+      <div className="input-box">
           {/* Email */}
           <input
             type="email"
@@ -70,7 +73,8 @@ const Signup = () => {
             required
             placeholder="Email"
           />
-
+      </div>
+      <div className="input-box">
           {/* Contact Number */}
           <input
             type="tel"
@@ -80,7 +84,8 @@ const Signup = () => {
             pattern="[0-9]{10}"
             placeholder="Contact Number"
           />
-
+      </div>
+      <div className="input-box">
           {/* Stream */}
           <input
             type="text"
@@ -89,7 +94,8 @@ const Signup = () => {
             required
             placeholder="Stream"
           />
-
+      </div>
+      <div className="input-box">
           {/* SRN */}
           <input
             type="text"
@@ -98,7 +104,8 @@ const Signup = () => {
             required
             placeholder="SRN"
           />
-
+      </div>
+      <div className="input-box">
           {/* Year of Passing */}
           <input
             type="number"
@@ -107,7 +114,8 @@ const Signup = () => {
             required
             placeholder="Year of Passing"
           />
-
+      </div>
+      <div className="input-box">
           {/* Password */}
           <input
             type="password"
@@ -116,7 +124,8 @@ const Signup = () => {
             required
             placeholder="Password"
           />
-
+      </div>
+      <div className="input-box">
           {/* Confirm Password */}
           <input
             type="password"
@@ -125,7 +134,8 @@ const Signup = () => {
             required
             placeholder="Confirm Password"
           />
-
+      </div>
+      <div className="input-box">
           {/* Role */}
           <select
             value={role}
@@ -138,8 +148,10 @@ const Signup = () => {
             <option value="student">Student</option>
             <option value="teacher">Teacher</option>
           </select>
-
+      </div>
+      <div className="input-box">
           <button type="submit">Register</button>
+      </div>
         </form>
       </div>
     </div>
