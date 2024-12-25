@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './events.css';
 
 function Events() {
@@ -75,8 +76,56 @@ function Events() {
   const filteredEvents = events.filter((event) =>
     event.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('open');
+    }
 
   return (
+      <>
+          <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Developer Page</title>
+<link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            />
+            <link
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+                rel="stylesheet"
+            />
+            <div className="hamburger" onClick={toggleSidebar}>
+                ☰
+            </div>
+            <div className="sidebar" id="sidebar">
+                <Link to="/">
+                    <i className="fa fa-fw fa-home" /> <span>Home</span>
+                </Link>
+                <Link to="/about">
+                    <i className="fa fa-fw fa-info-circle" /> <span>About</span>
+                </Link>
+                <Link to="/stories">
+                    <i className="fa fa-fw fa-book" /> <span>Stories</span>
+                </Link>
+                <Link to="/jobs">
+                    <i className="fa fa-fw fa-briefcase" /> <span>Jobs</span>
+                </Link>
+                <Link to="/profile">
+                    <i className="fa fa-fw fa-user-tie" /> <span>Profile</span>
+                </Link>
+                <Link to="/network">
+                    <i className="fa fa-fw fa-user-plus" /> <span>Networks</span>
+                </Link>
+                <Link to="/events">
+                    <i className="fa fa-fw fa-book-open" /> <span>Events</span>
+                </Link>
+                <Link to="/developer">
+                    <i className="fa fa-fw fa-users" /> <span>Developers</span>
+                </Link>
+            </div>
+            <nav className="navbar">
+                <img src="./assets/logo.png" alt="Logo" className="logo" />
+            </nav>
     <div className="events">
       <div className="search-bar">
         <input
@@ -121,6 +170,7 @@ function Events() {
         <button onClick={addEvent}>Submit</button>
       </div>
     </div>
+      </>
   );
 }
 
