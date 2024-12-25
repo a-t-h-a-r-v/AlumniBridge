@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection
-mongoose.connect("mongodb://127.0.0.1:27017/alumni_student_connect")
+mongoose.connect("mongodb://adminUser:QpMz.1793@localhost:27017/AlumniBridge?authSource=admin")
     .then(() => console.log('MongoDB connected successfully'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
 

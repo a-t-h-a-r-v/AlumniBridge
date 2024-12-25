@@ -1,0 +1,1114 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar styling */
+.sidebar {
+
+    width: 80px; /* Initial width for only icons */
+    height: 100vh;
+    padding-top: 9%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(15px) saturate(150%); /* Enhanced glass effect with blur and saturation */
+    -webkit-backdrop-filter: blur(15px) saturate(150%); /* For Safari support */
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for glass look */
+    color: #59ffd7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease, background 0.3s ease;
+    overflow: hidden;
+    z-index: 9998;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  */
+
+
+}
+
+.sidebar.open {
+    width: 250px; /* Expand width to show text */
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-decoration: none;
+    color: #59ffd7;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a i {
+    font-size: 20px;
+    min-width: 30px; /* Align icons properly */
+    text-align: center;
+}
+
+.sidebar a span {
+    margin-left: 10px;
+    opacity: 0; /* Text hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.open a span {
+    opacity: 1; /* Show text when sidebar is open */
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Transparent hover background */
+    border-radius: 5px; /* Add smooth rounding */
+}
+
+/* Hamburger menu */
+.hamburger {
+    font-size: 25px;
+    cursor: pointer;
+    /* padding-top: 15%; */
+    padding: 10px;
+    color: #59ffd7;
+    position: fixed;
+    left: 10px;
+    top: 80px;
+    z-index: 9999;
+}
+
+/* Additional Glass Effect Styling */
+.sidebar {
+    background: rgba(11, 3, 45, 0.3); /* Adjusted for darker glass */
+}
+
+/* Sidebar Styles */
+/* .sidebar { */
+/* height: 100%;
+width: 220px;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+backdrop-filter: blur(10px); 
+background: rgba(255, 255, 255, 0.1);
+padding-top: 16px;
+color: black;
+border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar h2 {
+font-size: 1.5rem;
+text-align: center;
+color: black;
+}
+
+.sidebar a {
+padding: 10px 20px;
+text-decoration: none;
+font-size: 18px;
+color: grey;
+display: block;
+transition: 0.3s;
+}
+
+.sidebar a:hover {
+color: black;
+}
+ */
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 100px; /* Adjusted for sidebar */
+    width: calc(100% - 220px);
+    /* backdrop-filter: blur(10px);  */
+    /* background: rgba(0, 0, 0, 0.2); */
+    /*border-bottom: 1px solid rgba(255, 255, 255, 0.2);*/
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f0a500;
+}
+
+.search-bar {
+
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    padding: 0 15px;
+    /* padding-left: 70%; */
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#welcome-section {
+    background: linear-gradient(45deg, #0a1cec, #2575fc);
+    color: white;
+}
+
+#about-section {
+    background: #f4f4f4;
+    color: #333;
+}
+
+#stories-section {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    padding: 50px 20px;
+}
+
+.story-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.story-box {
+    width: 200px;
+    height: 150px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.1rem;
+}
+
+#footer-section {
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+/* Welcome Section Styles */
+#welcome-section {
+    height: 100vh;
+    /* display: flex; */
+    /* justify-content: ;
+    align-items: center;
+    text-align: center; */
+/* padding: 20px; */
+background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+color: white;
+overflow: hidden;
+  }
+
+  .welcome-content {
+      animation: fadeIn 2s ease-in-out;
+      text-align: left; 
+  }
+
+  .welcome-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      left:10%
+  }
+
+  .welcome-content p {
+      font-size: 1.2rem;
+      /* margin-bottom: 30px; */
+  }
+
+
+  /* Keyframe Animations */
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(-30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes slideIn {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  .typing-animation {
+      /* font-family: 'Courier New', Courier, monospace; Monospaced font gives the typing effect */
+      overflow: hidden; /* Hide the text that hasn't been typed yet */
+      border-right: 2px solid black; /* Cursor effect */
+      white-space: nowrap; /* Prevent the text from wrapping */
+      animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite; /* Typing and cursor blinking animation */
+      margin-left: -20px; /* Move the text to the left by 20px (adjust as needed) */
+  }
+
+  @keyframes typing {
+      from {
+          width: 0;
+      }
+      to {
+          width: 100%;
+      }
+  }
+
+  @keyframes blink {
+      50% {
+          border-color: transparent;
+      }
+  }
+
+
+
+
+  /* about */
+  /* About Section Styles */
+  #about-section {
+      height: 100vh;
+      /* background: linear-gradient(45deg, #1511eb, #2575fc , #729fec); */
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      /* overflow: hidden; */
+      position: relative;
+  }
+
+  .about-content {
+      animation: fadeIn 2s ease-out;
+  }
+
+  .about-heading {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: slideInUp 1.5s ease;
+  }
+
+  .about-content .about-description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 2s ease;
+  }
+
+  .cards-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      animation: fadeInZoom 2.5s ease;
+  }
+
+  .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: popUp 1.5s ease;
+  }
+
+  .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: zoomIn 1.5s ease;
+  }
+
+  .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+  }
+
+  .card p {
+      font-size: 1rem;
+      color: #555;
+  }
+
+  .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Keyframe Animations */
+  @keyframes slideInUp {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes fadeInZoom {
+      from {
+          opacity: 0;
+          transform: scale(0.8);
+      }
+      to {
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+
+  @keyframes zoomIn {
+      from {
+          transform: scale(0.5);
+          opacity: 0;
+      }
+      to {
+          transform: scale(1);
+          opacity: 1;
+      }
+  }
+
+  @keyframes popUp {
+      0% {
+          transform: scale(0.8);
+          opacity: 0;
+      }
+      50% {
+          transform: scale(1.05);
+          opacity: 0.8;
+      }
+      100% {
+          transform: scale(1);
+          opacity: 1;
+      }
+  }
+
+  /* Initial hidden state */
+  .animate-section .about-heading,
+  .animate-section .about-description,
+  .animate-section .welcome-section,
+  .animate-section .card {
+      opacity: 0;
+      transform: translateY(50px); /* Start slightly out of view */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* Visible state for animations */
+  .animate-section.visible .about-heading {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .animate-section.visible .about-description {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .animate-section.visible .card {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s; /* Adds a slight delay for cards */
+  }
+
+
+  /* Section styles */
+  #stories-section {
+      /* background: linear-gradient(45deg, #1511eb, #2575fc , #729fec); */
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
+      min-height: 100vh;
+      padding: 50px 20px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+  }
+
+  /* Section heading */
+  .stories-heading {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      position: relative;
+      animation: slideInUp 1.5s ease;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Story container */
+  .story-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      perspective: 1500px; /* For 3D effect */
+  }
+
+  /* Story card */
+  .story-card {
+      width: 280px;
+      height: 350px;
+      background: linear-gradient(135deg, #ffffff, #f3f3f3);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease, box-shadow 0.3s ease, opacity 0.6s;
+      position: relative;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s ease forwards;
+  }
+
+  .story-card:hover {
+      transform: rotateY(15deg) rotateX(10deg) scale(1.05); /* 3D hover effect */
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Delayed animations for cards */
+  .story-card:nth-child(1) {
+      animation-delay: 0.3s;
+  }
+  .story-card:nth-child(2) {
+      animation-delay: 0.5s;
+  }
+  .story-card:nth-child(3) {
+      animation-delay: 0.7s;
+  }
+  .story-card:nth-child(4) {
+      animation-delay: 0.9s;
+  }
+  .story-card:nth-child(5) {
+      animation-delay: 1.1s;
+  }
+
+  /* Card content */
+  .story-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+
+  .story-content h3 {
+      font-size: 1.6rem;
+      color: #2575fc;
+      margin-bottom: 15px;
+      animation: zoomIn 0.6s ease-in-out;
+  }
+
+  .story-content p {
+      font-size: 1rem;
+      color: #555;
+  }
+
+  .story-content .highlight {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #ff6a6a;
+      font-style: italic;
+      animation: fadeInHighlight 1.5s ease infinite alternate;
+  }
+
+  /* Keyframe animations */
+
+  /* Heading animation */
+  @keyframes slideInDown {
+      from {
+          opacity: 0;
+          transform: translateY(-30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* Card fade-up animation */
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* Zoom effect for text */
+  @keyframes zoomIn {
+      from {
+          transform: scale(0.9);
+          opacity: 0.7;
+      }
+      to {
+          transform: scale(1);
+          opacity: 1;
+      }
+  }
+
+  /* Highlight pulsing effect */
+  @keyframes fadeInHighlight {
+      from {
+          color: #ff6a6a;
+          text-shadow: 1px 1px 5px rgba(255, 106, 106, 0.3);
+      }
+      to {
+          color: #ff4c4c;
+          text-shadow: 2px 2px 10px rgba(255, 76, 76, 0.5);
+      }
+  }
+
+
+
+  .footer {
+      background: #2c3e50;
+      color: #fff;
+      padding: 40px 20px;
+      position: relative;
+      text-align: center;
+  }
+  .footer h3 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+  .footer .links {
+      margin-bottom: 20px;
+  }
+  .footer .links a {
+      color: #bdc3c7;
+      margin: 0 15px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+  .footer .links a:hover {
+      color: #1abc9c;
+  }
+  .footer .social-icons {
+      margin: 20px 0;
+  }
+  .footer .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #bdc3c7;
+      font-size: 20px;
+      transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .footer .social-icons a:hover {
+      color: #1abc9c;
+      transform: scale(1.2);
+  }
+  .footer p {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #7f8c8d;
+  }
+  .footer .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: url('https://i.imgur.com/2g3HXLJ.png') repeat-x;
+      background-size: cover;
+      animation: wave-animation 4s infinite linear;
+  }
+  @keyframes wave-animation {
+      from { background-position-x: 0; }
+      to { background-position-x: 1000px; }
+  }
+
+
+
+
+
+
+
+
+
+
+  /* Base Styles */
+  body {
+      font-family: Arial, sans-serif;
+      /* background-color: #1a1a1a; */
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+  }
+
+  /* Container for the marquee */
+  .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 500px;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid #288bf4;
+      /* background: linear-gradient(45deg, #1511eb, #2575fc , #729fec); */
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
+      border-radius: 10px;
+      box-shadow: 0 4px 8px linear-gradient(45deg, #1511eb, #2575fc , #729fec);
+  }
+
+  /* Marquee animation */
+  .marquee {
+      display: flex;
+      gap: 1rem;
+      animation: marquee 20s linear infinite;
+  }
+
+  .marquee.reverse {
+      animation-direction: reverse;
+  }
+
+  @keyframes marquee {
+      0% {
+          transform: translateX(100%);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
+  }
+
+  /* Review Card */
+  .card {
+      display: flex;
+      flex-direction: column;
+      /* background: #333333; */
+      border: 1px solid #2c61e7;
+      border-radius: 10px;
+      width: 250px;
+      padding: 16px;
+      transition: background-color 0.3s ease;
+  }
+
+  .card:hover {
+      background-color: #5987eb;
+      color: white;
+  }
+
+  .card img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 10px;
+  }
+
+  .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .card-name {
+      font-weight: bold;
+      color: #ffcc00;
+  }
+
+  .card-username {
+      font-size: 0.8rem;
+      color: #bbbbbb;
+  }
+
+  .card-body {
+      margin-top: 10px;
+      color: #ddd;
+  }
+
+  /* Gradient overlays for visual effect */
+  .gradient {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 15%;
+      pointer-events: none;
+  }
+
+  .gradient-left {
+      left: 0;
+      background: linear-gradient(to right, #085ad7, rgba(54, 114, 243, 0));
+  }
+
+  .gradient-right {
+      right: 0;
+      background: linear-gradient(to left, #367de8, rgba(54, 114, 243, 0));
+  }
+
+  /* General Footer Styling */
+  .college-footer {
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: #f0f0f0; /* Light text color */
+      padding: 50px 20px;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+
+  .footer-container > div {
+      flex: 1;
+      min-width: 250px;
+  }
+
+  /* Section Titles */
+  .footer-about h3,
+  .footer-links h3,
+  .footer-contact h3,
+  .footer-social h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: aqua; /* Gold color for titles */
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+  }
+
+  /* About Section */
+  .footer-about p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-top: 5px;
+      color: #e0e0e0; /* Slightly muted white */
+  }
+
+  /* Links Section */
+  .footer-links ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  .footer-links ul li {
+      margin-bottom: 10px;
+  }
+
+  .footer-links ul li a {
+      color: #f0f0f0;
+      text-decoration: none;
+      transition: color 0.3s;
+  }
+
+  .footer-links ul li a:hover {
+      color: aqua; /* Gold hover effect */
+  }
+
+  /* Contact Section */
+  .footer-contact p,
+  .footer-contact a {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #f0f0f0;
+  }
+
+  .footer-contact a:hover {
+      color: aqua; /* Gold hover effect for links */
+  }
+
+  /* Social Media Section */
+  .footer-social .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+  }
+
+  .footer-social .social-icon img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 50%;
+  }
+
+  .footer-social .social-icon img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4); /* Glow effect */
+  }
+
+  /* Footer Bottom Section */
+  .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(240, 240, 240, 0.2);
+  }
+
+  .footer-bottom a {
+      color: aqua; /* Gold for links */
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+  }
+
+  .footer-bottom a:hover {
+      text-decoration: underline;
+  }
+
+  .element {
+      background-image: url('./welcome.gif');
+      background-size: contain; /* Ensure the entire GIF is visible */
+      background-repeat: no-repeat; /* Prevent tiling of the GIF */
+      background-position: center;
+      width: 600px;
+      height: 400px;
+      position: absolute;
+      top: 50%; /* Position it vertically in the center */
+      right: 1.5%; /* Position it on the right side */
+      transform: translateY(-50%); /* Adjust for exact vertical centering */
+  }
+
+  .elements {
+      background-image: url('./CENTRE.gif');
+      background-size: cover;
+      background-position: center;
+      width: 600px;
+      height: 400px;
+      position: absolute;
+      top: 50%; /* Position it vertically in the center */
+      left: 95%; /* Position it on the right side */
+      transform: translateY(-50%); /* Adjust for exact vertical centering */
+  }
+
+  /* Hyper Text Effect for Heading */
+  .stories-heading {
+      font-family: "Arial", sans-serif;
+      font-weight: bold;
+      font-size: 2rem; /* Default size for heading */
+      color: black; /* Default text color */
+      text-align: center;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease;
+      animation: fadeInScale 2s ease-out forwards; /* Apply fade-in and scale animation */
+  }
+
+  @media (prefers-color-scheme: dark) {
+      .stories-heading {
+          color: white; /* Adapt to dark mode */
+      }
+  }
+
+  /* Animation for fade-in and scaling effect */
+  @keyframes fadeInScale {
+      0% {
+          opacity: 0;
+          transform: scale(0.5); /* Start with smaller size */
+      }
+      50% {
+          opacity: 0.5;
+          transform: scale(1.1); /* Scale up */
+      }
+      100% {
+          opacity: 1;
+          transform: scale(1); /* End at normal size */
+      }
+  }
+
+
+  .logo {
+      width: 20rem; /* Adjust logo size as needed */
+      height: auto;
+
+  }
+
+
+  /* General Container Setup */
+  .containers {
+      position: relative;
+      width: 450px;
+      height: 450px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #24243e;
+      border-radius: 50%;
+      left:50%
+  }
+
+  /* Center Title */
+  .center-title {
+      position: absolute;
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #000, #666);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 10;
+  }
+
+  /* Inner Orbit */
+  .inner-orbit {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      animation: rotate-clockwise 8s linear infinite;
+      color: white;
+  }
+
+  .inner-orbit .icon {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+
+  .inner-orbit .whatsapp {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .inner-orbit .github {
+      background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .inner-orbit .notion {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg');
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .inner-orbit .slack {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg');
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  /* Outer Orbit */
+  .outer-orbit {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      animation: rotate-anticlockwise 12s linear infinite;
+  }
+
+  .outer-orbit .icon {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+
+  .outer-orbit .drive {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png');
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .outer-orbit .facebook {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg');
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .outer-orbit .instagram {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .outer-orbit .twitter {
+      background-image: url('https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg');
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  /* Rotating Animations */
+  @keyframes rotate-clockwise {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+
+  @keyframes rotate-anticlockwise {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(-360deg);
+      }
+  }
+
+
+
