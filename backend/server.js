@@ -52,6 +52,19 @@ const userSchema = new mongoose.Schema(
 
 const User = mongoose.model("User", userSchema);
 
+const jobSchema = new mongoose.Schema({
+    jobTitle: { type: String, required: true },
+    companyName: { type: String, required: true },
+    mode: { type: String, enum: ["Online", "Offline"], required: true },
+    description: { type: String, required: true },
+    location: { type: String, required: true },
+    postedBy: { type: String, required: true },
+    datePosted: { type: Date, required: true },
+    image: { type: String, default: "https://via.placeholder.com/100" },
+});
+
+const Job = mongoose.model("Job", jobSchema);
+
 // Events Endpoints
 app.post("/api/events", async (req, res) => {
     try {
@@ -153,6 +166,49 @@ app.post("/api/login", async (req, res) => {
     }
 });
 
+app.post("/api/jobs", async (req, res) => {
+    try {
+        const {
+            jobTitle,
+            companyName,
+            mode,
+            description,
+            location,
+            postedBy,
+            datePosted,
+            image,
+        } = req.body;
+
+        if (!jobTitle || !companyName || !mode || !description || !location || !postedBy || !datePosted) {
+            return res.status(400).json({ message: "All fields are required." });
+        }
+
+        const newJob = new Job({
+            jobTitle,
+            companyName,
+            mode,
+            description,
+            location,
+            postedBy,
+            datePosted,
+            image,
+        });
+
+        await newJob.save();
+        res.status(201).json({ message: "Job added successfully", job: newJob });
+    } catch (error) {
+        res.status(500).json({ message: "Error adding job", error });
+    }
+});
+
+app.get("/api/jobs", async (req, res) => {
+    try {
+        const jobs = await Job.find();
+        res.json(jobs);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching jobs", error });
+    }
+});
 
 // Start server
 app.listen(PORT, () => {

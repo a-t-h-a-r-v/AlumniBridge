@@ -104,7 +104,7 @@ function Events() {
                 <Link to="/about">
                     <i className="fa fa-fw fa-info-circle" /> <span>About</span>
                 </Link>
-                <Link to="/stories">
+                <Link to="/review">
                     <i className="fa fa-fw fa-book" /> <span>Stories</span>
                 </Link>
                 <Link to="/jobs">

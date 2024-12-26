@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import './login.css';
 import backgroundImage from './backgrd.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage() {
+    const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/home'); // Redirect to the "About" page
+  };
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -25,8 +30,7 @@ function LoginPage() {
 
       if (response.status === 200) {
         alert('Login successful');
-        // Redirect to the next page after successful login
-        // For example, use React Router's useNavigate hook here
+          handleRedirect();
       } else {
         setError(data.message || 'Login failed');
       }

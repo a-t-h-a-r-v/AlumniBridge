@@ -29,7 +29,7 @@ function Dev(){
                 <Link to="/about">
                     <i className="fa fa-fw fa-info-circle" /> <span>About</span>
                 </Link>
-                <Link to="/stories">
+                <Link to="/review">
                     <i className="fa fa-fw fa-book" /> <span>Stories</span>
                 </Link>
                 <Link to="/jobs">
@@ -63,16 +63,16 @@ function Dev(){
                   </div>
                   <div className="developer-box">
                     <h4>Akhilesh Joshi</h4>
-                    <p>This is a brief description of the developer.</p>
+                    <p>Student at KLE technological university Belagavi Campus, Machine learning and Research Enthusiast</p>
                     <div className="icons">
-                      <a href="">
-                        <img src="linkedin-icon.png" alt="LinkedIn" />
+                      <a href="https://www.linkedin.com/in/akhilesh-joshi-aj2004/">
+                        <img src="./assets/linkedin-icon.png" alt="LinkedIn" />
                       </a>
                       <a href="https://github.com/akhileshj2004">
-                        <img src="github-icon.png" alt="GitHub" />
+                        <img src="./assets/github-icon.png" alt="GitHub" />
                       </a>
                       <a href="">
-                        <img src="gmail-icon.png" alt="Gmail" />
+                        <img src="./assets/gmail-icon.png" alt="Gmail" />
                       </a>
                     </div>
                   </div>
@@ -83,16 +83,16 @@ function Dev(){
                   </div>
                   <div className="developer-box">
                     <h4>Atharv Shirgurkar</h4>
-                    <p>This is a brief description of the developer.</p>
+                    <p>Student at KLE technological university Belagavi Campus, Machine learning and Research Enthusiast</p>
                     <div className="icons">
-                      <a href="">
-                        <img src="linkedin-icon.png" alt="LinkedIn" />
+                      <a href="https://www.linkedin.com/in/atharv-shirgurkar-553b87216/">
+                        <img src="./assets/linkedin-icon.png" alt="LinkedIn" />
                       </a>
                       <a href="https://github.com/a-t-h-a-r-v">
-                        <img src="github-icon.png" alt="GitHub" />
+                        <img src="./assets/github-icon.png" alt="GitHub" />
                       </a>
                       <a href="">
-                        <img src="gmail-icon.png" alt="Gmail" />
+                        <img src="./assets/gmail-icon.png" alt="Gmail" />
                       </a>
                     </div>
                   </div>
@@ -106,16 +106,16 @@ function Dev(){
                   </div>
                   <div className="developer-box">
                     <h4>Rutika Wagalekar</h4>
-                    <p>This is a brief description of the developer.</p>
+                    <p>Student at KLE technological university Belagavi Campus, Machine learning and Research Enthusiast</p>
                     <div className="icons">
-                      <a href="">
-                        <img src="linkedin-icon.png" alt="LinkedIn" />
+                      <a href="https://www.linkedin.com/in/rutika-wagalekar-5906a725b/">
+                        <img src="./assets/linkedin-icon.png" alt="LinkedIn" />
                       </a>
                       <a href="https://github.com/RutikaW1155">
-                        <img src="github-icon.png" alt="GitHub" />
+                        <img src="./assets/github-icon.png" alt="GitHub" />
                       </a>
                       <a href="">
-                        <img src="gmail-icon.png" alt="Gmail" />
+                        <img src="./assets/gmail-icon.png" alt="Gmail" />
                       </a>
                     </div>
                   </div>
@@ -129,16 +129,16 @@ function Dev(){
                   </div>
                   <div className="developer-box">
                     <h4>Saniya Kadarbhai</h4>
-                    <p>This is a brief description of the developer.</p>
+                    <p>Student at KLE technological university Belagavi Campus, Machine learning and Research Enthusiast</p>
                     <div className="icons">
-                      <a href="">
-                        <img src="linkedin-icon.png" alt="LinkedIn" />
+                      <a href="https://www.linkedin.com/in/saniya-kadarbhai-3a7a0425a/">
+                        <img src="./assets/linkedin-icon.png" alt="LinkedIn" />
                       </a>
                       <a href="https://github.com/SaniyaKadarbhai">
-                        <img src="github-icon.png" alt="GitHub" />
+                        <img src="./assets/github-icon.png" alt="GitHub" />
                       </a>
                       <a href="">
-                        <img src="gmail-icon.png" alt="Gmail" />
+                        <img src="./assets/gmail-icon.png" alt="Gmail" />
                       </a>
                     </div>
                   </div>
@@ -146,21 +146,7 @@ function Dev(){
               </div>
             </section>
             <section id="description-section">
-              <p>
-                Lorem ipsum odor amet, consectetuer adipiscing elit. Gravida ante
-                habitasse nullam sodales finibus platea. Ex euismod ex maecenas montes
-                torquent; facilisi eleifend sodales. Netus ultrices ultricies luctus in
-                pretium a pellentesque. Orci conubia consequat at sapien ridiculus
-                fringilla taciti. Arcu litora viverra conubia commodo vel potenti est.
-                Felis orci tellus sociosqu dui id. Praesent magna habitant dictumst a
-                per. Magnis non vitae ligula id nunc ad consequat tellus sagittis.
-                Aliquam condimentum proin pharetra facilisis fringilla hac; varius
-                vulputate. Sodales ultricies nostra vestibulum aptent ante. Adipiscing
-                neque mollis mauris commodo viverra ornare platea himenaeos. Ante
-                ultricies egestas morbi penatibus etiam, gravida enim interdum. Magnis
-                class nunc ultricies hendrerit fames magna. Egestas montes vel cursus
-                libero ridiculus.{" "}
-              </p>
+        <img src="./assets/DEVELOPERS.gif" height="500px" width="500px"/>
             </section>
           </div>
           <footer className="college-footer">

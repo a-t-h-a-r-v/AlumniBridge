@@ -110,7 +110,6 @@ section{
     padding:20px
 }
 #welcome-section{
-    background:linear-gradient(45deg,#0a1cec,#2575fc);
     color:#fff
 }
 #about-section{
@@ -118,7 +117,6 @@ section{
     color:#333
 }
 #stories-section{
-    background:linear-gradient(45deg,#ff9a9e,#fad0c4);
     padding:50px 20px
 }
 .story-container{
@@ -144,7 +142,6 @@ section{
 }
 #welcome-section{
     height:100vh;
-    background:linear-gradient(to right,#0f0c29,#302b63,#24243e);
     color:#fff;
     overflow:hidden
 }
@@ -202,7 +199,6 @@ section{
 }
 #about-section{
     height:100vh;
-    background:linear-gradient(to right,#0f0c29,#302b63,#24243e);
     color:#fff;
     display:flex;
     justify-content:center;
@@ -338,7 +334,6 @@ section{
     transition-delay:0.3s
 }
 #stories-section{
-    background:linear-gradient(to right,#0f0c29,#302b63,#24243e);
     min-height:100vh;
     padding:50px 20px;
     color:#fff;
@@ -367,7 +362,6 @@ section{
 .story-card{
     width:280px;
     height:350px;
-    background:linear-gradient(135deg,#ffffff,#f3f3f3);
     border-radius:20px;
     box-shadow:0 8px 20px rgb(0 0 0 / .2);
     overflow:hidden;
@@ -541,7 +535,6 @@ body{
     width:100%;
     overflow:hidden;
     border:1px solid #288bf4;
-    background:linear-gradient(to right,#0f0c29,#302b63,#24243e);
     border-radius:10px;
     box-shadow:0 4px 8px linear-gradient(45deg,#1511eb,#2575fc,#729fec)
 }
@@ -697,7 +690,7 @@ body{
     text-decoration:underline
 }
 .element{
-    background-image:url(welcome.gif);
+    background-image:url('./welcome.gif');
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
@@ -768,7 +761,6 @@ body{
     position:absolute;
     font-size:3rem;
     font-weight:700;
-    background:linear-gradient(to right,#000,#666);
     -webkit-background-clip:text;
     -webkit-text-fill-color:#fff0;
     background-clip: text;
@@ -866,3 +858,15 @@ body{
     }
 }
 
+.element {
+    background-image: url('./welcome.gif');
+    background-size: contain; /* Ensure the entire GIF is visible */
+    background-repeat: no-repeat; /* Prevent tiling of the GIF */
+    background-position: center;
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: 50%; /* Position it vertically in the center */
+    right: 1.5%; /* Position it on the right side */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+}
