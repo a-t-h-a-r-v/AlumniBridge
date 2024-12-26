@@ -133,4 +133,6 @@ body {
     text-decoration: underline;
   }
   
-
+  input::placeholder {
+      color: white; /* Change this to your desired color */
+  }

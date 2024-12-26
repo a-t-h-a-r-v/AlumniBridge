@@ -215,7 +215,7 @@ const RegistrationForm = () => {
         {successMessage && <p className="success-message">{successMessage}</p>}
         <div className="login">
             <p>
-                Already Have an Account?<Link to="/login">Login</Link>
+                Already Have an Account?<Link to="/login"><span style={{color: "aqua"}}> Login</span></Link>
             </p>
         </div>
       </div>
