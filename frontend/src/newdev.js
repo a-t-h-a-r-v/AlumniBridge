@@ -23,7 +23,7 @@ function Dev(){
                 ☰
             </div>
             <div className="sidebar" id="sidebar">
-                <Link to="/">
+                <Link to="/home">
                     <i className="fa fa-fw fa-home" /> <span>Home</span>
                 </Link>
                 <Link to="/about">
