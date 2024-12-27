@@ -98,3 +98,6 @@ body {
 .events {
     margin-top: 15%;
 }
+input::placeholder {
+    color: black; /* Change this to your desired color */
+}

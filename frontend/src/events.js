@@ -152,7 +152,6 @@ function Events() {
               </p>
               <p>{event.description}</p>
             </div>
-            <img src={event.image} alt="Event" />
           </div>
         ))}
       </div>

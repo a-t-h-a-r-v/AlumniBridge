@@ -85,6 +85,15 @@ body {
     outline: none;
     font-size: 16px;
 }
+select {
+    width: 106%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
 .form-container button {
     padding: 10px 20px;
     border-radius: 25px;
@@ -97,4 +106,7 @@ body {
 }
 .jobs {
     margin-top: 20%;
+}
+input::placeholder {
+    color: black; /* Change this to your desired color */
 }

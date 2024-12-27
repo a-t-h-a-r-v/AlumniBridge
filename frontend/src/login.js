@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './login.css';
 import backgroundImage from './backgrd.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from './App';
 
 function LoginPage() {
+    const { setIsLoggedIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
   const handleRedirect = () => {
@@ -29,7 +31,7 @@ function LoginPage() {
       const data = await response.json();
 
       if (response.status === 200) {
-        alert('Login successful');
+          setIsLoggedIn(true); // Update the login state
           handleRedirect();
       } else {
         setError(data.message || 'Login failed');

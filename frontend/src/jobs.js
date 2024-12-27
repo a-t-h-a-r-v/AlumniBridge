@@ -152,7 +152,6 @@ function Jobs() {
                 <p><strong>Date Posted:</strong> {job.datePosted}</p>
                 <p>{job.description}</p>
               </div>
-              <img src={job.image} alt="Job" />
             </div>
           ))}
         </div>
@@ -167,10 +166,14 @@ function Jobs() {
         <div className="form-container" id="form-container" style={{ display: 'none' }}>
           <input type="text" id="job-title" placeholder="Job Title" />
           <input type="text" id="company-name" placeholder="Company Name" />
-          <input type="text" id="job-mode" placeholder="Online / Offline" />
+          <select id="job-mode">
+              <option value="" disabled selected>Online / Offline</option>
+              <option value="Online">Online</option>
+              <option value="Offline">Offline</option>
+          </select>
           <input type="text" id="job-location" placeholder="Location" />
           <input type="text" id="job-posted-by" placeholder="Posted By" />
-          <input type="date" id="job-date-posted" placeholder="Date Posted (YYYY-MM-DD)" />
+          <input type="date" id="job-date-posted" placeholder="Date Posted (YYYY-MM-DD)" defaultValue={new Date().toISOString().split('T')[0]}/>
           <textarea id="job-description" placeholder="Job Description"></textarea>
           <button onClick={addJob}>Submit</button>
         </div>
