@@ -17,9 +17,10 @@ export const AuthContext = createContext(); // Ensure this is exported
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [loginEmail, setLoginEmail] = useState('');
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, loginEmail, setLoginEmail}}>
             <Router>
                 <Routes>
                     <Route path="/" element={<Login />} />

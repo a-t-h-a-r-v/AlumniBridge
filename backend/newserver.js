@@ -45,6 +45,7 @@ const transporter = nodemailer.createTransport({
 
 const sendOtp = async (email) => {
     const otp = crypto.randomInt(100000, 999999).toString();
+    console.log("OTP IS : ", otp);
     otpStore.set(email, { otp, expiresAt: Date.now() + 300000 });
 
     const mailOptions = {
@@ -89,6 +90,68 @@ const jobSchema = new mongoose.Schema({
 });
 
 const Job = mongoose.model("Job", jobSchema);
+
+// Fetch User by Email
+app.get("/api/users", async (req, res) => {
+    try {
+        const { email } = req.query;
+
+        // Validate the email parameter
+        if (!email) {
+            return res.status(400).json({ message: "Email query parameter is required" });
+        }
+
+        // Find the user by email
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Return the user details (exclude sensitive information like password)
+        const { password, ...userDetails } = user._doc;
+        res.status(200).json(userDetails);
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        res.status(500).json({ message: "Error fetching user", error });
+    }
+});
+
+// Update User Profile
+app.put("/api/users", async (req, res) => {
+    try {
+        const { email, first_name, last_name, srn, stream, year_of_passing, profile_pic } = req.body;
+
+        // Validate email (mandatory for identifying the user)
+        if (!email) {
+            return res.status(400).json({ message: "Email is required for updating the profile" });
+        }
+
+        // Find the user and update their details
+        const updatedUser = await User.findOneAndUpdate(
+            { email },
+            {
+                $set: {
+                    first_name,
+                    last_name,
+                    srn,
+                    stream,
+                    year_of_passing,
+                    profile_pic,
+                },
+            },
+            { new: true, runValidators: true } // Return the updated user
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        res.status(200).json({ message: "Profile updated successfully", user: updatedUser });
+    } catch (error) {
+        console.error("Error updating profile:", error);
+        res.status(500).json({ message: "Error updating profile", error });
+    }
+});
 
 // Events Endpoints
 app.post("/api/events", async (req, res) => {

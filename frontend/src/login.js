@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./App";
 
 function LoginPage() {
-    const { setIsLoggedIn } = useContext(AuthContext);
+    const { setIsLoggedIn, setLoginEmail } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleRedirect = () => {
@@ -59,6 +59,8 @@ function LoginPage() {
 
             if (response.status === 200) {
                 setIsLoggedIn(true); // Mark user as logged in
+                setLoginEmail(email);
+                console.log(email);
                 handleRedirect(); // Redirect to home page
             } else {
                 setError(data.message || "OTP verification failed");
