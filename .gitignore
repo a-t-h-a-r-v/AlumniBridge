@@ -2,5 +2,4 @@ client/node_modules/
 server/node_modules/
 frontend/node_modules/
 backend/node_modules/
-backend/newserver.js
 backend/.env
