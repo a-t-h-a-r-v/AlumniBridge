@@ -7,6 +7,7 @@ import Register from './registration';
 import About from './about';
 import Home from './home';
 import Profile from './profile';
+import Network from './network';
 import Jobs from './jobs';
 import Review from './review';
 import Dev from './newdev';
@@ -72,6 +73,14 @@ function App() {
                         element={
                             <ProtectedRoute>
                                 <Review />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/network"
+                        element={
+                            <ProtectedRoute>
+                                <Network />
                             </ProtectedRoute>
                         }
                     />

@@ -370,6 +370,31 @@ app.get("/api/jobs", async (req, res) => {
     }
 });
 
+// Fetch Users by Stream
+app.get("/api/network", async (req, res) => {
+    try {
+        const { stream } = req.query;
+
+        // Validate the stream parameter
+        if (!stream) {
+            return res.status(400).json({ message: "Stream query parameter is required" });
+        }
+
+        // Find users with the same stream (exclude sensitive information like password)
+        const users = await User.find({ stream }).select("-password");
+
+        // If no users are found
+        if (users.length === 0) {
+            return res.status(404).json({ message: "No users found for this stream" });
+        }
+
+        res.status(200).json(users);
+    } catch (error) {
+        console.error("Error fetching users by stream:", error);
+        res.status(500).json({ message: "Error fetching users by stream", error });
+    }
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./registration.css";
 
 const RegistrationForm = () => {
@@ -207,6 +208,11 @@ const RegistrationForm = () => {
               {errors.role && <small className="error">{errors.role}</small>}
             </div>
             <button type="submit">Register</button>
+            <div className="login">
+                <p>
+                    Already Registered? <Link to="/login" >Login Now</Link>
+                </p>
+            </div>
           </form>
         ) : (
           <form onSubmit={handleOtpSubmit}>

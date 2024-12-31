@@ -133,6 +133,12 @@ body {
     text-decoration: underline;
   }
   
-  input::placeholder {
+  .input-box input::placeholder {
       color: white; /* Change this to your desired color */
+  }
+  .input-box select {
+      color: white; /* Change this to your desired color */
+  }
+  a{
+      color: white;
   }
