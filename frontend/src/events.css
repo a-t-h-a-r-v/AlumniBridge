@@ -96,8 +96,8 @@ body {
     margin-top: 10px;
 }
 .events {
-    margin-top: 15%;
+    margin-top: 25%;
 }
 input::placeholder {
-    color: black; /* Change this to your desired color */
+    color: black;
 }

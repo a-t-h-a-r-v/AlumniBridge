@@ -121,9 +121,6 @@ section {
     position: relative;
     text-align: center;
 }
-.college-footer, .container {
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-}
 .footer h3 {
     font-size: 24px;
     font-weight: 700;
@@ -230,7 +227,7 @@ section {
     width: 40px;
     height: 40px;
     transition: transform .3s, box-shadow .3s;
-    border-radius: 50%}
+border-radius: 50%}
 .footer-social .social-icon img:hover {
     transform: scale(1.2);
     box-shadow: 0 4px 10px rgba(255, 215, 0, .4);
@@ -253,100 +250,10 @@ section {
     width: 20rem;
     height: auto;
 }
-.developer-container {
-    display: flex;
-    align-items: center;
-    margin-left: 12rem;
-}
-.profile-photo {
-    flex-shrink: 0;
-    position: absolute;
-    left: -10rem;
-}
-.developer-box {
-    width: 100%}
-.icons {
-    display: flex;
-    justify-content: flex-start;
-    gap: .2rem;
-}
-.content {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 2rem;
-}
-.developer-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 2rem;
-    position: relative;
-}
-.profile-photo {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 1rem;
-}
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.developer-box {
-    background-color: rgba(255, 255, 255, .1);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
-    width: calc(100% - 10rem);
-    text-align: left;
-}
-.developer-box h4 {
-    margin: 0 0 .5rem;
-    font-size: 1.8rem;
-    text-align: left;
-}
-.developer-box p {
-    margin: 0 0 1rem;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, .8);
-    line-height: 1.5;
-    text-align: left;
-}
-.icons {
-    display: flex;
-    justify-content: flex-start;
-    gap: .5rem;
-}
-.icons img {
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-}
-#description-section {
-    height: 100vh;
-    /*background: linear-gradient(to right, #0f0c29, #302b63, #24243e);*/
-    color: #fff;
-    overflow: hidden;
-}
-.grid-container{
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 20px;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-    color: #fff;
-    overflow: hidden;
-}
 html, body {
     overflow: auto; /* Ensures scrolling is enabled */
     height: auto;   /* Removes any forced 100% height */
 }
-
 .center-title {
     position: absolute;
     font-size: 3rem;
@@ -356,116 +263,116 @@ html, body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     z-index: 10;
-  }
-  
-  /* Inner Orbit */
-  .inner-orbit {
+}
+
+/* Inner Orbit */
+.inner-orbit {
     position: absolute;
     width: 300px;
     height: 300px;
     animation: rotate-clockwise 8s linear infinite;
     color: white;
-  }
-  
-  .inner-orbit .icon {
+}
+
+.inner-orbit .icon {
     position: absolute;
     width: 40px;
     height: 40px;
     background-size: contain;
     background-repeat: no-repeat;
-  }
-  
-  .inner-orbit .whatsapp {
+}
+
+.inner-orbit .whatsapp {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .inner-orbit .github {
+}
+
+.inner-orbit .github {
     background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  .inner-orbit .notion {
+}
+
+.inner-orbit .notion {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg');
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .inner-orbit .slack {
+}
+
+.inner-orbit .slack {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg');
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  /* Outer Orbit */
-  .outer-orbit {
+}
+
+/* Outer Orbit */
+.outer-orbit {
     position: absolute;
     width: 450px;
     height: 450px;
     animation: rotate-anticlockwise 12s linear infinite;
-  }
-  
-  .outer-orbit .icon {
+}
+
+.outer-orbit .icon {
     position: absolute;
     width: 40px;
     height: 40px;
     background-size: contain;
     background-repeat: no-repeat;
-  }
-  
-  .outer-orbit .drive {
+}
+
+.outer-orbit .drive {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png');
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .outer-orbit .facebook {
+}
+
+.outer-orbit .facebook {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg');
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  .outer-orbit .instagram {
+}
+
+.outer-orbit .instagram {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .outer-orbit .twitter {
+}
+
+.outer-orbit .twitter {
     background-image: url('https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg');
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  /* Rotating Animations */
-  @keyframes rotate-clockwise {
+}
+
+/* Rotating Animations */
+@keyframes rotate-clockwise {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  @keyframes rotate-anticlockwise {
+}
+
+@keyframes rotate-anticlockwise {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(-360deg);
+        transform: rotate(-360deg);
     }
-  }
-  
+}
+
 
 #about-section {
     height: 100vh;
@@ -474,15 +381,15 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-  }
-  
-  .about-content {
+}
+
+.about-content {
     flex: 1;
     max-width: 50%;
     margin-left: 10%;
     text-align: left;
-  }
-  .about-heading {
+}
+.about-heading {
     font-size: 36px;
     font-family: 'Arial', sans-serif;
     color: #fff;
@@ -493,24 +400,24 @@ html, body {
     white-space: nowrap; /* Prevents text from wrapping */
     width: 0; /* Initial width of the text */
     animation: typing 4s steps(10) 1s forwards, blink 0.75s step-end infinite; /* Typing and blinking effects */
-  }
-  
-  @keyframes typing {
+}
+
+@keyframes typing {
     from {
-      width: 0;
+        width: 0;
     }
     to {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
-  @keyframes blink {
+}
+
+@keyframes blink {
     50% {
-      border-color: transparent;
+        border-color: transparent;
     }
-  }
-  
-  .containers {
+}
+
+.temp-containers {
     width: 40%;
     max-width: 450px;
     aspect-ratio: 1 / 1;
@@ -523,32 +430,32 @@ html, body {
     padding: 20px; /* Add padding for spacing inside the circle */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
-  }
-  
-  .containers:hover {
+}
+
+.temp-containers:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     #about-section {
         flex-direction: column;
         text-align: center;
     }
-  
+
     .about-content {
         max-width: 100%;
         margin-bottom: 20px;
     }
-  
-    .containers {
+
+    .temp-containers {
         width: 60%;
         margin-left: 0;
         padding: 15px; /* Adjust padding for smaller screens */
     }
-  }
-  
-  .about-description {
+}
+
+.about-description {
     font-size: 18px;
     line-height: 1.8;
     color: #f5f5f5;
@@ -560,19 +467,19 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
     transition: transform 0.3s ease, background 0.3s ease; /* Smooth transition */
-  }
-  
-  .about-description span {
+}
+
+.about-description span {
     font-family: 'Verdana', sans-serif;
     font-style: italic;
     font-weight: 300;
-  }
-  
-  .about-description:hover {
+}
+
+.about-description:hover {
     transform: scale(1.02); /* Slight scale effect for hover */
     background: #0f0c29(56, 17, 228, 0.455); /* Lighter background on hover */
-  }
-  
-  .about-description span:hover {
+}
+
+.about-description span:hover {
     color: aqua; /* Highlight text on hover */
-  }
+}

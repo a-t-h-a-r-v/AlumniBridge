@@ -121,9 +121,6 @@ section {
     position: relative;
     text-align: center;
 }
-.college-footer, .container {
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-}
 .footer h3 {
     font-size: 24px;
     font-weight: 700;
@@ -338,7 +335,6 @@ section {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
     gap: 20px;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
     color: #fff;
     overflow: hidden;
 }

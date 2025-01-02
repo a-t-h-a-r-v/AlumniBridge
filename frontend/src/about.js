@@ -125,7 +125,7 @@ const About = () => {
         </div>
 
         {/* Circles Container */}
-        <div className="containers">
+        <div className="temp-containers">
           <div className="center-title">Circles</div>
           {/* Inner Orbit */}
           <div className="orbit inner-orbit">
