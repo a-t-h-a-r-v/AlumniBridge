@@ -381,6 +381,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 40px;
+    gap: 60px;
 }
 
 .about-content {

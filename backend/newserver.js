@@ -36,7 +36,7 @@ const eventSchema = new mongoose.Schema({
 });
 
 const transporter = nodemailer.createTransport({
-    service: "Gmail",
+    service: "Yahoo",
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
