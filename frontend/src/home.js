@@ -67,15 +67,16 @@ const PlatformPage = () => {
       >
         <div
           className="welcome-content"
-          style={{ flex: 1, textAlign: "left", marginLeft: "5%" }}
+          style={{ flex: 1, textAlign: "left", marginLeft: "0%", marginRight:"50%" }}
         >
           <h1
             className="typing-animation"
             style={{
               marginBottom: "20px",
-              fontSize: "2.5rem",
+              fontSize: "3.5rem",
               marginLeft: "10%",
               fontWeight: "bold",
+              color:"aqua",
             }}
           >
             𝐆𝐲𝐚𝐧 𝐒𝐚𝐧𝐠𝐚𝐦 𝐌𝐚𝐧𝐜𝐡
@@ -89,19 +90,17 @@ const PlatformPage = () => {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
               maxWidth: "800px",
               color: "white",
-              fontSize: "18px",
+              fontSize: "20px",
               lineHeight: "1.8",
               transition: "transform 0.3s ease, background 0.3s ease",
             }}
           >
-            We bridge the gap between alumni and students, fostering a community of learning,
-            collaboration, and growth. Explore exciting opportunities, share your experiences, and
-            connect with like-minded individuals.
+            𝖶𝖾 𝖻𝗋𝗂𝖽𝗀𝖾 𝗍𝗁𝖾 𝗀𝖺𝗉 𝖻𝖾𝗍𝗐𝖾𝖾𝗇 𝖺𝗅𝗎𝗆𝗇𝗂 𝖺𝗇𝖽 𝗌𝗍𝗎𝖽𝖾𝗇𝗍𝗌, 𝖿𝗈𝗌𝗍𝖾𝗋𝗂𝗇𝗀 𝖺 𝖼𝗈𝗆𝗆𝗎𝗇𝗂𝗍𝗒 𝗈𝖿 𝗅𝖾𝖺𝗋𝗇𝗂𝗇𝗀,             𝖼𝗈𝗅𝗅𝖺𝖻𝗈𝗋𝖺𝗍𝗂𝗈𝗇, 𝖺𝗇𝖽 𝗀𝗋𝗈𝗐𝗍𝗁. 𝖤𝗑𝗉𝗅𝗈𝗋𝖾 𝖾𝗑𝖼𝗂𝗍𝗂𝗇𝗀 𝗈𝗉𝗉𝗈𝗋𝗍𝗎𝗇𝗂𝗍𝗂𝖾𝗌, 𝗌𝗁𝖺𝗋𝖾 𝗒𝗈𝗎𝗋 𝖾𝗑𝗉𝖾𝗋𝗂𝖾𝗇𝖼𝖾𝗌, 𝖺𝗇𝖽             𝖼𝗈𝗇𝗇𝖾𝖼𝗍 𝗐𝗂𝗍𝗁 𝗅𝗂𝗄𝖾-𝗆𝗂𝗇𝖽𝖾𝖽 𝗂𝗇𝖽𝗂𝗏𝗂𝖽𝗎𝖺𝗅𝗌.
         <br />
-<p><strong>Our Vision:</strong></p>
-      To empower students and alumni by fostering meaningful relationships and opportunities that drive professional and personal growth.
-Join us on this journey of transformation and let’s create a brighter future together!
-        <br />
+<p style={{color: "aqua", 
+  fontSize: "24px",
+}}><strong>Our Vision:</strong></p>
+      𝖳𝗈 𝖾𝗆𝗉𝗈𝗐𝖾𝗋 𝗌𝗍𝗎𝖽𝖾𝗇𝗍𝗌 𝖺𝗇𝖽 𝖺𝗅𝗎𝗆𝗇𝗂 𝖻𝗒 𝖿𝗈𝗌𝗍𝖾𝗋𝗂𝗇𝗀 𝗆𝖾𝖺𝗇𝗂𝗇𝗀𝖿𝗎𝗅 𝗋𝖾𝗅𝖺𝗍𝗂𝗈𝗇𝗌𝗁𝗂𝗉𝗌 𝖺𝗇𝖽 𝗈𝗉𝗉𝗈𝗋𝗍𝗎𝗇𝗂𝗍𝗂𝖾𝗌 𝗍𝗁𝖺𝗍 𝖽𝗋𝗂𝗏𝖾 𝗉𝗋𝗈𝖿𝖾𝗌𝗌𝗂𝗈𝗇𝖺𝗅 𝖺𝗇𝖽 𝗉𝖾𝗋𝗌𝗈𝗇𝖺𝗅 𝗀𝗋𝗈𝗐𝗍𝗁. 𝖩𝗈𝗂𝗇 𝗎𝗌 𝗈𝗇 𝗍𝗁𝗂𝗌 𝗃𝗈𝗎𝗋𝗇𝖾𝗒 𝗈𝖿 𝗍𝗋𝖺𝗇𝗌𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 𝖺𝗇𝖽 𝗅𝖾𝗍’𝗌 𝖼𝗋𝖾𝖺𝗍𝖾 𝖺 𝖻𝗋𝗂𝗀𝗁𝗍𝖾𝗋 𝖿𝗎𝗍𝗎𝗋𝖾 𝗍𝗈𝗀𝖾𝗍𝗁𝖾𝗋!        <br />
 Explore. Connect. Inspire.
           </div>
         </div>
