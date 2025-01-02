@@ -66,7 +66,7 @@ const userSchema = new mongoose.Schema(
         first_name: { type: String, required: true },
         last_name: { type: String, required: true },
         email: { type: String, unique: true, required: true },
-        srn: { type: String, required: true },
+        srn: { type: String, required: false },
         stream: { type: String, required: true },
         year_of_passing: { type: Number, required: true },
         password: { type: String, required: true },
@@ -196,7 +196,6 @@ app.post("/api/register", async (req, res) => {
             !last_name ||
             !email ||
             !password ||
-            !srn ||
             !stream ||
             !year_of_passing ||
             !role

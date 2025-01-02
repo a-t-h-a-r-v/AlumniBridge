@@ -130,7 +130,7 @@ const Review = () => {
 
       {/* Review Section */}
       <section id="stories-section">
-        <h2 className="stories-heading hyper-text">✨ REVIEW ✨</h2>
+        <h2 className="stories-heading hyper-text">✨ REVIEWS ✨</h2>
         <div className="story-container">
           <div className="container">
             <div className="marquee" id="marquee1">

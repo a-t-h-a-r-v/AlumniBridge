@@ -28,7 +28,6 @@ const RegistrationForm = () => {
     if (!formData.email) newErrors.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Invalid email format";
-    if (!formData.srn) newErrors.srn = "SRN is required";
     if (!formData.stream) newErrors.stream = "Stream is required";
     if (!formData.year_of_passing)
       newErrors.year_of_passing = "Year of Passing is required";
@@ -142,7 +141,6 @@ const RegistrationForm = () => {
                 value={formData.srn}
                 onChange={handleChange}
                 placeholder="SRN"
-                required
               />
               {errors.srn && <small className="error">{errors.srn}</small>}
             </div>
