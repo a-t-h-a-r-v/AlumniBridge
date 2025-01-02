@@ -118,9 +118,9 @@ function Jobs() {
         <Link to="/profile">
           <i className="fa fa-fw fa-user-tie" /> <span>Profile</span>
         </Link>
-        <Link to="/network">
+        {/* <Link to="/network">
           <i className="fa fa-fw fa-user-plus" /> <span>Networks</span>
-        </Link>
+        </Link> */}
         <Link to="/events">
           <i className="fa fa-fw fa-book-open" /> <span>Events</span>
         </Link>

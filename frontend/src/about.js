@@ -95,9 +95,9 @@ const About = () => {
                 <Link to="/profile">
                     <i className="fa fa-fw fa-user-tie" /> <span>Profile</span>
                 </Link>
-                <Link to="/network">
+                {/* <Link to="/network">
                     <i className="fa fa-fw fa-user-plus" /> <span>Networks</span>
-                </Link>
+                </Link> */}
                 <Link to="/events">
                     <i className="fa fa-fw fa-book-open" /> <span>Events</span>
                 </Link>
@@ -125,7 +125,7 @@ const About = () => {
         </div>
 
         {/* Circles Container */}
-        <div className="temp-containers">
+        <div className="containers">
           <div className="center-title">Circles</div>
           {/* Inner Orbit */}
           <div className="orbit inner-orbit">
