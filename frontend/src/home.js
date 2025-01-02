@@ -31,7 +31,7 @@ const PlatformPage = () => {
                     <i className="fa fa-fw fa-info-circle" /> <span>About</span>
                 </Link>
                 <Link to="/review">
-                    <i className="fa fa-fw fa-book" /> <span>Stories</span>
+                    <i className="fa fa-fw fa-book" /> <span>Reviews</span>
                 </Link>
                 <Link to="/jobs">
                     <i className="fa fa-fw fa-briefcase" /> <span>Jobs</span>

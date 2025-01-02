@@ -26,7 +26,7 @@ function Navbar() {
         <i className="fa fa-fw fa-info-circle" /> <span>About</span>
         </a>
         <a href="#stories-section">
-        <i className="fa fa-fw fa-book" /> <span>Stories</span>
+        <i className="fa fa-fw fa-book" /> <span>Reviews</span>
         </a>
         <a href="#jobs">
         <i className="fa fa-fw fa-briefcase" /> <span>Jobs</span>

@@ -110,7 +110,7 @@ function Jobs() {
           <i className="fa fa-fw fa-info-circle" /> <span>About</span>
         </Link>
         <Link to="/review">
-          <i className="fa fa-fw fa-book" /> <span>Stories</span>
+          <i className="fa fa-fw fa-book" /> <span>Reviews</span>
         </Link>
         <Link to="/jobs">
           <i className="fa fa-fw fa-briefcase" /> <span>Jobs</span>
@@ -123,6 +123,9 @@ function Jobs() {
         </Link> */}
         <Link to="/events">
           <i className="fa fa-fw fa-book-open" /> <span>Events</span>
+        </Link>
+        <Link to="/developer">
+              <i className="fa fa-fw fa-users" /> <span>Developers</span>
         </Link>
       </div>
       <nav className="navbar">
