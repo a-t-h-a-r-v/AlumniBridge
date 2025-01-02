@@ -342,7 +342,7 @@ section{
     justify-content:center;
     align-items:center;
     text-align:center;
-    overflow:hidden
+    /* overflow:hidden */
 }
 .stories-heading{
     font-size:3rem;
