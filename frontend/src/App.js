@@ -7,7 +7,7 @@ import Register from './registration';
 import About from './about';
 import Home from './home';
 import Profile from './profile';
-import Network from './network';
+import Forum from './forum';
 import Jobs from './jobs';
 import Review from './review';
 import Dev from './newdev';
@@ -77,10 +77,10 @@ function App() {
                         }
                     />
                     <Route
-                        path="/network"
+                        path="/forum"
                         element={
                             <ProtectedRoute>
-                                <Network />
+                                <Forum />
                             </ProtectedRoute>
                         }
                     />

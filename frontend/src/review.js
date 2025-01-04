@@ -114,6 +114,9 @@ const Review = () => {
                 <Link to="/profile">
                     <i className="fa fa-fw fa-user-tie" /> <span>Profile</span>
                 </Link>
+                <Link to="/forum">
+                    <i className="fa fa-fw fa-user-plus" /> <span>Forum</span>
+                </Link>
                 {/* <Link to="/network">
                     <i className="fa fa-fw fa-user-plus" /> <span>Networks</span>
                 </Link> */}

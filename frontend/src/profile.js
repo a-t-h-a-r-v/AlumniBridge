@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./App";
+import './profile.css'
 
 const Profile = () => {
     const { loginEmail } = useContext(AuthContext); // Retrieve the logged-in user's email
@@ -112,6 +113,9 @@ const Profile = () => {
                 </Link>
                 <Link to="/profile">
                     <i className="fa fa-fw fa-user-tie" /> <span>Profile</span>
+                </Link>
+                <Link to="/forum">
+                    <i className="fa fa-fw fa-user-plus" /> <span>Forum</span>
                 </Link>
                 {/* <Link to="/network">
                     <i className="fa fa-fw fa-user-plus" /> <span>Networks</span>

@@ -369,28 +369,98 @@ app.get("/api/jobs", async (req, res) => {
     }
 });
 
-// Fetch Users by Stream
-app.get("/api/network", async (req, res) => {
+app.get("/api/user-role", async (req, res) => {
     try {
-        const { stream } = req.query;
+        const { email } = req.query;
 
-        // Validate the stream parameter
-        if (!stream) {
-            return res.status(400).json({ message: "Stream query parameter is required" });
+        // Validate the email parameter
+        if (!email) {
+            return res.status(400).json({ message: "Email query parameter is required" });
         }
 
-        // Find users with the same stream (exclude sensitive information like password)
-        const users = await User.find({ stream }).select("-password");
-
-        // If no users are found
-        if (users.length === 0) {
-            return res.status(404).json({ message: "No users found for this stream" });
+        // Find the user by email
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
         }
 
-        res.status(200).json(users);
+        // Return the role of the user
+        res.status(200).json({ role: user.role });
     } catch (error) {
-        console.error("Error fetching users by stream:", error);
-        res.status(500).json({ message: "Error fetching users by stream", error });
+        console.error("Error fetching user role:", error);
+        res.status(500).json({ message: "Error fetching user role", error });
+    }
+});
+
+// Define schemas for forums
+const forumSchema = new mongoose.Schema({
+    message: { type: String, required: true },
+    email: { type: String, required: true },
+    date: { type: Date, required: true },
+    time: { type: String, required: true },
+});
+
+// Create models for each forum
+const StudentForum = mongoose.model("StudentForum", forumSchema);
+const AlumniForum = mongoose.model("AlumniForum", forumSchema);
+const AlumniStudentForum = mongoose.model("AlumniStudentForum", forumSchema);
+
+// Fetch messages from a specific forum
+app.get("/api/forum/:forumType", async (req, res) => {
+    try {
+        const { forumType } = req.params;
+
+        // Determine the collection to query
+        let forumModel;
+        if (forumType === "student") {
+            forumModel = StudentForum;
+        } else if (forumType === "alumni") {
+            forumModel = AlumniForum;
+        } else if (forumType === "alumni_student") {
+            forumModel = AlumniStudentForum;
+        } else {
+            return res.status(400).json({ message: "Invalid forum type." });
+        }
+
+        const messages = await forumModel.find().sort({ date: -1, time: -1 }); // Sort by latest messages
+        res.status(200).json(messages);
+    } catch (error) {
+        console.error("Error fetching forum messages:", error);
+        res.status(500).json({ message: "Error fetching forum messages", error });
+    }
+});
+
+// Post a message to a specific forum
+app.post("/api/forum/:forumType", async (req, res) => {
+    try {
+        const { forumType } = req.params;
+        const { message, email, date, time } = req.body;
+
+        // Validate input fields
+        if (!message || !email || !date || !time) {
+            return res.status(400).json({ message: "All fields are required." });
+        }
+
+        // Determine the collection to insert into
+        let forumModel;
+        if (forumType === "student") {
+            forumModel = StudentForum;
+        } else if (forumType === "alumni") {
+            forumModel = AlumniForum;
+        } else if (forumType === "alumni_student") {
+            forumModel = AlumniStudentForum;
+        } else {
+            return res.status(400).json({ message: "Invalid forum type." });
+        }
+
+        // Create and save a new message
+        const newMessage = new forumModel({ message, email, date, time });
+        await newMessage.save();
+
+        res.status(201).json({ message: "Message posted successfully", data: newMessage });
+    } catch (error) {
+        console.error("Error posting message to forum:", error);
+        res.status(500).json({ message: "Error posting message to forum", error });
     }
 });
 
