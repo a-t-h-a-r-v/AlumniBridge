@@ -72,6 +72,7 @@ const userSchema = new mongoose.Schema(
         password: { type: String, required: true },
         role: { type: String, enum: ["student", "alumni"], required: true },
         profile_pic: { type: String, default: null },
+        about: {type: String, default: null},
     },
     { timestamps: true }
 );
@@ -119,7 +120,7 @@ app.get("/api/users", async (req, res) => {
 // Update User Profile
 app.put("/api/users", async (req, res) => {
     try {
-        const { email, first_name, last_name, srn, stream, year_of_passing, profile_pic } = req.body;
+        const { email, first_name, last_name, srn, stream, year_of_passing, profile_pic, about } = req.body;
 
         // Validate email (mandatory for identifying the user)
         if (!email) {
@@ -137,6 +138,7 @@ app.put("/api/users", async (req, res) => {
                     stream,
                     year_of_passing,
                     profile_pic,
+                    about,
                 },
             },
             { new: true, runValidators: true } // Return the updated user

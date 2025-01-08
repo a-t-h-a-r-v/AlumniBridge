@@ -1,3 +1,16 @@
-.forumClass {
-    margin-top: 20%;
+.scrollable-container {
+    max-height: 400px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column; /* Ensure children stack vertically */
+    justify-content: flex-start;
+    padding-right: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.scrollable-container > .scroll-to-bottom {
+    margin-top: auto; /* Push this element to the bottom */
+    scroll-snap-align: end; /* Ensure alignment when scrolling */
 }

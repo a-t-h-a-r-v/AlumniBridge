@@ -191,6 +191,16 @@ const Profile = () => {
                         </label>
                         <br />
                         <label>
+                            About:
+                            <input
+                                type="text"
+                                name="about"
+                                value={editedData.about || ""}
+                                onChange={handleInputChange}
+                            />
+                        </label>
+                        <br />
+                        <label>
                             Profile Picture URL:
                             <input
                                 type="text"
@@ -211,6 +221,7 @@ const Profile = () => {
                         <p><strong>SRN:</strong> {userData.srn}</p>
                         <p><strong>Stream:</strong> {userData.stream}</p>
                         <p><strong>Year of Passing:</strong> {userData.year_of_passing}</p>
+                        <p><strong>About:</strong> {userData.about}</p>
                         <p><strong>Role:</strong> {userData.role}</p>
                         <button onClick={() => setIsEditing(true)}>Edit</button>
                     </>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "./App";
 import { Link } from 'react-router-dom';
+import  './forum.css'
 
 const FetchUserRole = () => {
     function toggleSidebar() {
@@ -154,65 +155,78 @@ const FetchUserRole = () => {
             <nav className="navbar">
                 <img src="./assets/logo.png" alt="Logo" className="logo" />
             </nav>
-        <div style={{
-            minHeight: "100vh",
-            color: "white",
-            padding: "20px",
-                marginTop: "20%",
-            textAlign: "center"
-        }}>
-            <h2>User Role</h2>
-            <p><strong>Logged-in Email:</strong> {loginEmail}</p>
+            <div className="forumClass">
+                    {/* Sidebar and other UI elements */}
+                    <div style={{
+                        minHeight: "100vh",
+                        color: "white",
+                        padding: "20px",
+                        marginTop: "20%",
+                        textAlign: "center"
+                    }}>
+                        <h2>User Role</h2>
+                        <p><strong>Logged-in Email:</strong> {loginEmail}</p>
 
-            {/* Display role-based buttons */}
-            {role === "student" && (
-                <div>
-                    <button onClick={() => setForumType("student")} style={buttonStyle}>
-                        STUDENT
-                    </button>
-                    <button onClick={() => setForumType("alumni_student")} style={buttonStyle}>
-                        STUDENT-ALUMNI
-                    </button>
-                </div>
-            )}
-            {role === "alumni" && (
-                <div>
-                    <button onClick={() => setForumType("alumni")} style={buttonStyle}>
-                        ALUMNI
-                    </button>
-                    <button onClick={() => setForumType("alumni_student")} style={buttonStyle}>
-                        STUDENT-ALUMNI
-                    </button>
-                </div>
-            )}
-
-            {/* Display forum messages and input for posting new messages */}
-            {forumType && (
-                <div>
-                    <h3>{forumType.charAt(0).toUpperCase() + forumType.slice(1)} Forum</h3>
-                    <div style={{ margin: "20px 0" }}>
-                        {messages.map((msg) => (
-                            <div key={msg._id} style={messageStyle}>
-                                <p><strong>{msg.email}</strong> ({msg.date} at {msg.time}):</p>
-                                <p>{msg.message}</p>
+                        {/* Display role-based buttons */}
+                        {role === "student" && (
+                            <div>
+                                <button onClick={() => setForumType("student")} style={buttonStyle}>
+                                    STUDENT
+                                </button>
+                                <button onClick={() => setForumType("alumni_student")} style={buttonStyle}>
+                                    STUDENT-ALUMNI
+                                </button>
                             </div>
-                        ))}
-                    </div>
-                    <div style={{ marginTop: "20px" }}>
-                        <textarea
-                            value={newMessage}
-                            onChange={(e) => setNewMessage(e.target.value)}
-                            rows="4"
-                            style={{ width: "80%", padding: "10px", fontSize: "16px" }}
-                            placeholder="Write a message..."
-                        ></textarea>
-                        <button onClick={handlePostMessage} style={buttonStyle}>
-                            Post
-                        </button>
+                        )}
+                        {role === "alumni" && (
+                            <div>
+                                <button onClick={() => setForumType("alumni")} style={buttonStyle}>
+                                    ALUMNI
+                                </button>
+                                <button onClick={() => setForumType("alumni_student")} style={buttonStyle}>
+                                    STUDENT-ALUMNI
+                                </button>
+                            </div>
+                        )}
+
+                        {/* Display forum messages and input for posting new messages */}
+                        {forumType && (
+                            <div>
+                                <h3>{forumType.charAt(0).toUpperCase() + forumType.slice(1)} Forum</h3>
+                                {/* Scrollable messages container */}
+                                <div className="scrollable-container "style={{
+                                    maxHeight: "400px",  // Set a fixed height for the scrollable area
+                                    overflowY: "scroll",  // Enable vertical scrolling
+                                    margin: "20px 0",
+                                    paddingRight: "10px",  // Prevent hiding scroll bar behind messages
+                                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                                    borderRadius: "5px"
+                                }}>
+                                    {messages.map((msg) => (
+                                        <div key={msg._id} style={messageStyle}>
+                                            <p><strong>{msg.email}</strong> ({msg.date} at {msg.time}):</p>
+                                            <p>{msg.message}</p>
+                                        </div>
+                                    ))}
+                            {/* Invisible div to ensure scrolling to the bottom */}
+                                    <div className="scroll-to-bottom"></div>
+                                </div>
+                                <div style={{ marginTop: "20px" }}>
+                                    <textarea
+                                        value={newMessage}
+                                        onChange={(e) => setNewMessage(e.target.value)}
+                                        rows="4"
+                                        style={{ width: "80%", padding: "10px", fontSize: "16px" }}
+                                        placeholder="Write a message..."
+                                    ></textarea>
+                                    <button onClick={handlePostMessage} style={buttonStyle}>
+                                        Post
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
-            )}
-        </div>
         </div>
     );
 };
